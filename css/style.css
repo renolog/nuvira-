@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600;700&family=Montserrat:wght@400;500;700&display=swap');
 
 :root {
   --bg: #F7F8FC;
@@ -192,7 +192,7 @@ p {
 .toc a {
   position: relative;
   display: block;
-  padding: 8px 10px 8px 16px;
+  padding: 8px 10px 8px 24px;
   border-radius: 10px;
   color: var(--muted);
   font-size: 13px;
@@ -202,15 +202,20 @@ p {
 }
 
 .toc a::before {
-  content: "";
+  content: "✦";
   position: absolute;
-  left: 6px;
+  left: 4px;
   top: 50%;
-  width: 4px;
-  height: 0;
-  border-radius: 999px;
-  background: #4A509A;
-  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  color: #4A509A;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.7);
   transition: 0.22s ease;
 }
 
@@ -223,7 +228,8 @@ p {
 
 .toc a:hover::before,
 .toc a.active::before {
-  height: 18px;
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
 }
 
 [data-theme="dark"] .toc-group {
@@ -247,7 +253,8 @@ p {
 }
 
 [data-theme="dark"] .toc a::before {
-  background: #F7F8FC;
+  background: none;
+  color: #F7F8FC;
 }
 
 .theme-toggle {
@@ -496,8 +503,6 @@ main {
   }
 }
 
-/* HERO DARK */
-
 [data-theme="dark"] #cover.hero {
   background: #7A8BD5;
 }
@@ -613,7 +618,7 @@ main {
   border-bottom-color: rgba(247, 248, 252, 0.35);
 }
 
-/* ACCORDION */
+/* ACCORDION / CONCEPT */
 
 #meaning {
   justify-content: flex-start;
@@ -830,7 +835,85 @@ main {
   background: #F7F8FC;
 }
 
-/* VISUAL */
+/* VISUAL MENU */
+
+#visual {
+  justify-content: center;
+  background: #F7F8FC;
+}
+
+#visual .section-head {
+  margin-bottom: 10px;
+}
+
+.visual-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.visual-menu-card {
+  grid-column: span 2;
+  min-height: 190px;
+  padding: 30px;
+  border-radius: var(--radius);
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  transition: transform 0.25s ease;
+}
+
+.visual-menu-card:nth-child(4) {
+  grid-column: 1 / span 2;
+}
+
+.visual-menu-card:nth-child(5) {
+  grid-column: 3 / span 2;
+}
+
+.visual-menu-card:hover {
+  transform: translateY(-8px);
+}
+
+.visual-menu-card h3 {
+  margin: 0;
+  font-family: "Advent Pro", sans-serif;
+  font-size: clamp(26px, 2.4vw, 40px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+.visual-menu-card p {
+  max-width: 980px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+[data-theme="dark"] #visual {
+  background: #292F72;
+}
+
+[data-theme="dark"] .visual-menu-card {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] #visual .eyebrow,
+[data-theme="dark"] #visual h2,
+[data-theme="dark"] #visual .section-head p,
+[data-theme="dark"] .visual-menu-card h3,
+[data-theme="dark"] .visual-menu-card p {
+  color: #F7F8FC;
+}
+
+/* VISUAL OLD TABS SUPPORT */
 
 #visual .visual-tabs {
   padding: 30px;
@@ -849,35 +932,6 @@ main {
   padding: 0;
   background: transparent;
   border-radius: 0;
-}
-
-#visual .visual-switcher button {
-  min-width: 0;
-  min-height: 64px;
-  padding: 0 32px;
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-  background: transparent;
-  color: #4A509A;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-  box-shadow: none;
-  cursor: pointer;
-  transition: 0.24s ease;
-}
-
-#visual .visual-switcher button:hover {
-  transform: translateY(-3px);
-  background: transparent;
-  box-shadow: none;
-}
-
-#visual .visual-switcher button[aria-selected="true"] {
-  background: #4A509A;
-  color: #F7F8FC;
-  border-color: #4A509A;
 }
 
 #visual .visual-panel {
@@ -905,11 +959,6 @@ main {
 
 #visual .visual-panel-side h3 {
   margin: 0 0 18px;
-  font-family: "Advent Pro", sans-serif;
-  font-size: clamp(26px, 2.4vw, 40px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0;
   color: #4A509A;
 }
 
@@ -923,15 +972,6 @@ main {
   display: grid;
   align-content: start;
   gap: 22px;
-}
-
-#visual .visual-panel-content p,
-#visual .visual-panel-list li {
-  font-family: "Montserrat", sans-serif;
-  font-size: var(--text-card-size);
-  font-weight: var(--text-card-weight);
-  line-height: var(--text-card-line);
-  color: var(--text-card-color);
 }
 
 #visual .visual-panel-list {
@@ -952,10 +992,6 @@ main {
   position: absolute;
   left: 0;
   top: 0.58em;
-  width: auto;
-  height: auto;
-  background: none;
-  border-radius: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 1;
@@ -965,22 +1001,6 @@ main {
 
 [data-theme="dark"] #visual .visual-tabs {
   background: #7A8BD5;
-}
-
-[data-theme="dark"] #visual .visual-switcher button {
-  border-color: #F7F8FC;
-  background: transparent;
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] #visual .visual-switcher button:hover {
-  background: transparent;
-}
-
-[data-theme="dark"] #visual .visual-switcher button[aria-selected="true"] {
-  background: #F7F8FC;
-  color: #292F72;
-  border-color: #F7F8FC;
 }
 
 [data-theme="dark"] #visual .visual-panel {
@@ -998,11 +1018,6 @@ main {
 }
 
 [data-theme="dark"] #visual .visual-panel-list li::before {
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] #visual .visual-panel-link {
-  border-color: #F7F8FC;
   color: #F7F8FC;
 }
 
@@ -1084,132 +1099,124 @@ main {
 .clearspace-text h3,
 .color-version-text h3 {
   margin: 0 0 18px;
-  font-family: "Advent Pro", sans-serif;
-  font-size: clamp(26px, 2.4vw, 40px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0;
   color: #4A509A;
 }
 
 .construction-switcher {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .clearspace-switcher {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .color-version-switcher {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .construction-option,
 .clearspace-option,
-.color-version-option {
-  min-height: 58px;
-  padding: 12px 16px;
-  border: none;
-  border-radius: 18px;
-  background: #F7F8FC;
+.color-version-option,
+.brand-color-option,
+#visual .visual-switcher button,
+#graphics .graphics-mode,
+#colors .color-palette-tabs button {
+  min-height: 64px;
+  padding: 0 32px;
+  border: 2px solid #4A509A;
+  border-radius: 999px;
+  background: transparent;
   color: #4A509A;
-  font-family: "Advent Pro", sans-serif;
-  font-size: 28px;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: none;
   cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.color-version-option {
-  text-align: left;
+  transition: 0.24s ease;
 }
 
 .construction-option:hover,
 .clearspace-option:hover,
-.color-version-option:hover {
-  transform: translateY(-2px);
+.color-version-option:hover,
+.brand-color-option:hover,
+#visual .visual-switcher button:hover,
+#graphics .graphics-mode:hover,
+#colors .color-palette-tabs button:hover {
+  transform: translateY(-3px);
+  background: transparent;
+  box-shadow: none;
 }
 
 .construction-option.is-active,
 .clearspace-option.is-active,
-.color-version-option.is-active {
+.color-version-option.is-active,
+.brand-color-option.is-active,
+#visual .visual-switcher button[aria-selected="true"],
+#graphics .graphics-mode.is-active,
+#colors .color-palette-tabs button[aria-selected="true"] {
   background: #4A509A;
   color: #F7F8FC;
-}
-
-/* CONSTRUCTION BUTTONS */
-
-#logo-construction .construction-option {
-  min-height: 64px;
-  padding: 0 32px;
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-  background: #4A509A;
-  color: #F7F8FC;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: none;
-  transition: 0.24s ease;
-}
-
-#logo-construction .construction-option:not(.is-active) {
-  background: transparent;
-  color: #4A509A;
   border-color: #4A509A;
 }
 
-#logo-construction .construction-option:hover {
-  transform: translateY(-3px);
+#logo-construction .construction-single-content {
+  display: flex;
+  flex-direction: column;
 }
 
 #logo-construction .construction-build-toggle {
+  align-self: flex-start;
+  margin-top: auto;
+  width: fit-content;
+  min-width: 0;
   min-height: 64px;
+  height: 64px;
   padding: 0 32px;
-  border-radius: 999px;
   border: 2px solid #4A509A;
+  border-radius: 999px;
   background: transparent;
   color: #4A509A;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   box-shadow: none;
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+#logo-construction .construction-build-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+#logo-construction .construction-single-image img {
+  transition: opacity 0.08s linear !important;
+}
+
+#logo-construction .construction-single-image.is-icon-default {
+  background: #FFFFFF !important;
 }
 
 .brand-color-switcher {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .brand-color-switcher[hidden] {
   display: none !important;
-}
-
-.brand-color-option {
-  min-height: 52px;
-  padding: 10px 12px;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  background: #F7F8FC;
-  color: #4A509A;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.25s ease;
 }
 
 .brand-color-option span {
@@ -1219,14 +1226,6 @@ main {
   background: var(--swatch);
   border: 1px solid rgba(74, 80, 154, 0.18);
   flex: 0 0 auto;
-}
-
-.brand-color-option:hover {
-  transform: translateY(-2px);
-}
-
-.brand-color-option.is-active {
-  border-color: #4A509A;
 }
 
 /* LOGO COLORS SPECIAL */
@@ -1266,7 +1265,7 @@ main {
 }
 
 #logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
-  margin-top: 74px;
+  margin-top: 100px;
 }
 
 #logo-colors .color-version-option {
@@ -1275,6 +1274,39 @@ main {
 
 #logo-colors .brand-color-option {
   justify-content: center;
+  min-height: 54px !important;
+  height: 54px !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+#logo-colors .brand-color-option span {
+  display: none !important;
+}
+
+#logo-colors .brand-color-option[data-brand-color="blue"] {
+  background: #C9D2FD !important;
+  border: 2px solid #C9D2FD !important;
+}
+
+#logo-colors .brand-color-option[data-brand-color="lavender"] {
+  background: #ECE8FF !important;
+  border: 2px solid #ECE8FF !important;
+}
+
+#logo-colors .brand-color-option[data-brand-color="pink"] {
+  background: #FDEDED !important;
+  border: 2px solid #FDEDED !important;
+}
+
+#logo-colors .brand-color-option.is-active {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 3px !important;
 }
 
 /* LOGO DARK */
@@ -1306,38 +1338,31 @@ main {
 [data-theme="dark"] .construction-option,
 [data-theme="dark"] .clearspace-option,
 [data-theme="dark"] .color-version-option,
-[data-theme="dark"] .brand-color-option {
-  background: rgba(41, 47, 114, 0.28);
+[data-theme="dark"] .brand-color-option,
+[data-theme="dark"] #visual .visual-switcher button,
+[data-theme="dark"] #graphics .graphics-mode,
+[data-theme="dark"] #colors .color-palette-tabs button {
+  border-color: #F7F8FC;
+  background: transparent;
   color: #F7F8FC;
 }
 
 [data-theme="dark"] .construction-option.is-active,
 [data-theme="dark"] .clearspace-option.is-active,
-[data-theme="dark"] .color-version-option.is-active {
-  background: #292F72;
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] .brand-color-option.is-active {
-  border-color: #F7F8FC;
-}
-
-[data-theme="dark"] #logo-construction .construction-option {
+[data-theme="dark"] .color-version-option.is-active,
+[data-theme="dark"] .brand-color-option.is-active,
+[data-theme="dark"] #visual .visual-switcher button[aria-selected="true"],
+[data-theme="dark"] #graphics .graphics-mode.is-active,
+[data-theme="dark"] #colors .color-palette-tabs button[aria-selected="true"] {
   background: #F7F8FC;
   color: #292F72;
   border-color: #F7F8FC;
 }
 
-[data-theme="dark"] #logo-construction .construction-option:not(.is-active) {
-  background: transparent;
-  color: #F7F8FC;
-  border-color: #F7F8FC;
-}
-
 [data-theme="dark"] #logo-construction .construction-build-toggle {
+  border-color: #F7F8FC;
   background: transparent;
   color: #F7F8FC;
-  border-color: #F7F8FC;
 }
 
 /* SIZES AND MISUSE */
@@ -1437,24 +1462,8 @@ main {
 #colors .color-palette-tabs button {
   min-height: 54px;
   padding: 0 28px;
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-  background: transparent;
-  color: #4A509A;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-#colors .color-palette-tabs button:hover {
-  transform: translateY(-2px);
-}
-
-#colors .color-palette-tabs button[aria-selected="true"] {
-  background: #4A509A;
-  color: #F7F8FC;
 }
 
 #colors .color-palette-panel {
@@ -1525,24 +1534,27 @@ main {
 }
 
 #colors .color-swatch-card .swatch-info em {
-  width: 100%;
   min-height: 48px;
   margin-top: auto;
+  border: 2px solid #4A509A;
   border-radius: 999px;
   background: #4A509A;
   color: #F7F8FC;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: 500;
   font-style: normal;
   line-height: 1;
+  transition: 0.24s ease;
 }
 
 #colors .color-swatch-card.is-copied .swatch-info em {
-  background: #7A8BD5;
-  color: #F7F8FC;
+  background: transparent;
+  color: #4A509A;
+  border-color: #4A509A;
 }
 
 [data-theme="dark"] #colors {
@@ -1559,16 +1571,6 @@ main {
   background: #7A8BD5;
 }
 
-[data-theme="dark"] #colors .color-palette-tabs button {
-  border-color: #F7F8FC;
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] #colors .color-palette-tabs button[aria-selected="true"] {
-  background: #F7F8FC;
-  color: #292F72;
-}
-
 [data-theme="dark"] #colors .color-swatch-card,
 [data-theme="dark"] #colors .color-swatch-card .swatch-info {
   background: #292F72;
@@ -1579,14 +1581,16 @@ main {
   color: #F7F8FC;
 }
 
-[data-theme="dark"] #colors .swatch-info em {
+[data-theme="dark"] #colors .color-swatch-card .swatch-info em {
   background: #F7F8FC;
   color: #292F72;
+  border-color: #F7F8FC;
 }
 
 [data-theme="dark"] #colors .color-swatch-card.is-copied .swatch-info em {
-  background: #ECE8FF;
-  color: #292F72;
+  background: transparent;
+  color: #F7F8FC;
+  border-color: #F7F8FC;
 }
 
 /* TYPOGRAPHY */
@@ -1688,6 +1692,17 @@ main {
   display: grid;
   align-content: start;
   gap: 12px;
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+.font-card:hover {
+  transform: translateY(-3px);
+}
+
+.font-card.is-active {
+  outline: 2px solid #4A509A;
+  outline-offset: 4px;
 }
 
 .font-card span {
@@ -1751,10 +1766,7 @@ main {
 [data-theme="dark"] .type-controls label,
 [data-theme="dark"] #typePreview,
 [data-theme="dark"] .font-card h3,
-[data-theme="dark"] .type-note {
-  color: #F7F8FC;
-}
-
+[data-theme="dark"] .type-note,
 [data-theme="dark"] .type-label,
 [data-theme="dark"] .type-body-preview,
 [data-theme="dark"] .font-card p {
@@ -1764,6 +1776,10 @@ main {
 [data-theme="dark"] .font-card span {
   background: #7A8BD5;
   color: #F7F8FC;
+}
+
+[data-theme="dark"] #typography .font-card.is-active {
+  outline-color: #F7F8FC;
 }
 
 /* GRAPHICS */
@@ -1791,25 +1807,9 @@ main {
 #graphics .graphics-mode {
   min-height: 54px;
   padding: 0 28px;
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-  background: transparent;
-  color: #4A509A;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
-  cursor: pointer;
-  transition: 0.25s ease;
   white-space: nowrap;
-}
-
-#graphics .graphics-mode:hover {
-  transform: translateY(-2px);
-}
-
-#graphics .graphics-mode.is-active {
-  background: #4A509A;
-  color: #F7F8FC;
 }
 
 #graphics .graphics-card-main {
@@ -1850,11 +1850,6 @@ main {
 
 #graphics .graphics-content h3 {
   margin: 0 0 18px;
-  font-family: "Advent Pro", sans-serif;
-  font-size: clamp(26px, 2.4vw, 40px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0;
   color: #4A509A;
 }
 
@@ -1865,8 +1860,6 @@ main {
   line-height: var(--text-card-line);
   color: var(--text-card-color);
 }
-
-/* GRAPHICS RUNNER */
 
 #graphics .graphics-pagination {
   min-height: 38px;
@@ -1957,17 +1950,6 @@ main {
   background: #7A8BD5;
 }
 
-[data-theme="dark"] #graphics .graphics-mode {
-  border-color: #F7F8FC;
-  background: transparent;
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] #graphics .graphics-mode.is-active {
-  background: #F7F8FC;
-  color: #292F72;
-}
-
 [data-theme="dark"] #graphics .graphics-image-box {
   background: #292F72;
 }
@@ -1976,56 +1958,752 @@ main {
   outline-color: #F7F8FC;
 }
 
-/* UI KIT */
+/* UI KIT MENU */
 
-.ui-card {
+#uikit,
+.uikit-section {
+  background: #F7F8FC;
+}
+
+#uikit {
+  justify-content: center;
+}
+
+#uikit .section-head,
+.uikit-section .section-head {
+  margin-bottom: 10px;
+}
+
+#uikit .eyebrow {
+  color: var(--text);
+}
+
+#uikit h2 {
+  max-width: 1100px;
+  font-family: "Advent Pro", sans-serif;
+  font-size: clamp(42px, 5vw, 82px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  color: var(--text);
+}
+
+.uikit-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.uikit-menu-card {
+  min-height: 190px;
+  padding: 30px;
+  border-radius: var(--radius);
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  transition: transform 0.25s ease;
+}
+
+.uikit-menu-card:hover {
+  transform: translateY(-8px);
+}
+
+.uikit-menu-card h3 {
+  margin: 0;
+  font-family: "Advent Pro", sans-serif;
+  font-size: clamp(26px, 2.4vw, 40px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+.uikit-menu-card p {
+  max-width: 980px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+.uikit-menu-card span {
+  display: none !important;
+}
+
+[data-theme="dark"] #uikit,
+[data-theme="dark"] .uikit-section {
+  background: #292F72;
+}
+
+[data-theme="dark"] #uikit .eyebrow,
+[data-theme="dark"] #uikit h2,
+[data-theme="dark"] .uikit-menu-card h3,
+[data-theme="dark"] .uikit-menu-card p {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] .uikit-menu-card {
+  background: #7A8BD5;
+}
+
+/* UI COLORS */
+
+#ui-colors {
+  background: #F7F8FC;
+}
+
+#ui-colors .color-palette-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  gap: 24px;
+}
+
+.uikit-color-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+#ui-colors .color-palette-tabs {
+  width: fit-content;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
+}
+
+#ui-colors .color-palette-tabs button,
+.uikit-theme-card-toggle {
+  min-height: 54px;
+  padding: 0 28px;
+  border: 2px solid #4A509A;
+  border-radius: 999px;
+  background: transparent;
+  color: #4A509A;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.uikit-theme-card-toggle {
+  background: #4A509A;
+  color: #F7F8FC;
+  white-space: nowrap;
+}
+
+#ui-colors .color-palette-tabs button:hover,
+.uikit-theme-card-toggle:hover {
+  transform: translateY(-2px);
+}
+
+#ui-colors .color-palette-tabs button[aria-selected="true"] {
+  background: #4A509A;
+  color: #F7F8FC;
+}
+
+#ui-colors .color-palette-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+#ui-colors .color-palette-panel[hidden] {
+  display: none !important;
+}
+
+#ui-colors .color-swatch-card {
+  position: relative;
+  min-height: 400px;
+  padding: 150px 0 0;
+  border: none;
+  border-radius: 26px;
+  background: #F7F8FC;
+  color: #4A509A;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
+  transition: 0.25s ease;
+}
+
+#ui-colors .color-swatch-card:hover {
+  transform: translateY(-8px);
+}
+
+#ui-colors .color-swatch-card .swatch-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: auto;
+  height: 150px;
+  min-height: 150px;
+  background: var(--c);
+  border-bottom: 1px solid rgba(74, 80, 154, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.08);
+}
+
+#ui-colors .color-swatch-card .swatch-info {
+  min-height: 250px;
+  padding: 22px;
+  background: #F7F8FC;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+#ui-colors .color-swatch-card .swatch-info b {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #4A509A;
+}
+
+#ui-colors .color-swatch-card .swatch-info small {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #6F73A8;
+}
+
+#ui-colors .color-swatch-card .swatch-info em {
+  min-height: 48px;
+  margin-top: auto;
+  border: 2px solid #4A509A;
+  border-radius: 999px;
+  background: #4A509A;
+  color: #F7F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1;
+  transition: 0.24s ease;
+}
+
+#ui-colors .color-swatch-card.is-copied .swatch-info em {
+  background: transparent;
+  color: #4A509A;
+  border-color: #4A509A;
+}
+
+#ui-colors .dark-info {
+  display: none;
+}
+
+#ui-colors .color-palette-card.is-dark-palette {
+  background: #7A8BD5;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .swatch-color {
+  background: var(--dark-c);
+}
+
+#ui-colors .color-palette-card.is-dark-palette .light-info {
+  display: none;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .dark-info {
+  display: block;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .color-swatch-card,
+#ui-colors .color-palette-card.is-dark-palette .color-swatch-card .swatch-info {
+  background: #292F72;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .swatch-info b,
+#ui-colors .color-palette-card.is-dark-palette .swatch-info small {
+  color: #F7F8FC;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .swatch-info em {
+  background: #F7F8FC;
+  color: #292F72;
+  border-color: #F7F8FC;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .color-swatch-card.is-copied .swatch-info em {
+  background: transparent;
+  color: #F7F8FC;
+  border-color: #F7F8FC;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .color-palette-tabs button {
+  border-color: #F7F8FC;
+  color: #F7F8FC;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .color-palette-tabs button[aria-selected="true"] {
+  background: #F7F8FC;
+  color: #292F72;
+}
+
+#ui-colors .color-palette-card.is-dark-palette .uikit-theme-card-toggle {
+  background: #F7F8FC;
+  color: #292F72;
+  border-color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-colors {
+  background: #292F72;
+}
+
+[data-theme="dark"] #ui-colors .eyebrow,
+[data-theme="dark"] #ui-colors h2,
+[data-theme="dark"] #ui-colors .section-head p {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-colors .color-palette-card {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] #ui-colors .color-palette-tabs button {
+  border-color: #F7F8FC;
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-colors .color-palette-tabs button[aria-selected="true"] {
+  background: #F7F8FC;
+  color: #292F72;
+}
+
+[data-theme="dark"] #ui-colors .color-swatch-card,
+[data-theme="dark"] #ui-colors .color-swatch-card .swatch-info {
+  background: #292F72;
+}
+
+[data-theme="dark"] #ui-colors .swatch-info b,
+[data-theme="dark"] #ui-colors .swatch-info small {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-colors .color-swatch-card .swatch-info em {
+  background: #F7F8FC;
+  color: #292F72;
+  border-color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-colors .color-swatch-card.is-copied .swatch-info em {
+  background: transparent;
+  color: #F7F8FC;
+  border-color: #F7F8FC;
+}
+
+/* UI TYPOGRAPHY */
+
+#ui-typography {
+  background: #F7F8FC;
+  justify-content: center;
+}
+
+.uikit-typography-image-card {
+  width: 100%;
+  padding: 30px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+}
+
+.uikit-typography-images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.uikit-typography-images img {
+  width: 100%;
+  height: 52vh;
+  object-fit: contain;
+  border-radius: 26px;
+  display: block;
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] #ui-typography {
+  background: #292F72;
+}
+
+[data-theme="dark"] .uikit-typography-image-card {
+  background: #7A8BD5;
+}
+
+/* UI GRID */
+
+#ui-grid {
+  background: #F7F8FC;
+  justify-content: center;
+}
+
+.uikit-grid-image-card {
+  width: 100%;
+  padding: 24px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+}
+
+.uikit-grid-image-card img {
+  width: 100%;
+  height: 46vh;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 26px;
+  display: block;
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] #ui-grid {
+  background: #292F72;
+}
+
+[data-theme="dark"] .uikit-grid-image-card {
+  background: #7A8BD5;
+}
+
+/* UI BUTTONS */
+
+#ui-buttons {
+  background: #F7F8FC;
+  justify-content: flex-start !important;
+  gap: 24px;
+  overflow: visible !important;
+}
+
+#ui-buttons .section-head {
+  gap: 10px;
+}
+
+#ui-buttons .uikit-buttons-showcase {
+  padding: 24px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
   display: grid;
   gap: 18px;
 }
 
-.ui-card-wide {
-  grid-column: span 3;
+#ui-buttons .uikit-buttons-switcher {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
 }
 
-.ui-label {
-  font-size: 14px;
-  font-weight: 700;
-  opacity: 0.75;
-}
-
-.input {
-  width: 100%;
-  height: 56px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 0 18px;
-  background: #F7F8FC;
+#ui-buttons .uikit-buttons-switcher button {
+  min-height: 48px;
+  padding: 0 22px;
+  border: 2px solid #4A509A;
+  border-radius: 999px;
+  background: transparent;
   color: #4A509A;
-  outline: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.24s ease;
 }
 
-.input:focus {
-  border-color: #4A509A;
-  box-shadow: 0 0 0 4px rgba(74, 80, 154, 0.12);
+#ui-buttons .uikit-buttons-switcher button:hover {
+  transform: translateY(-2px);
 }
 
-.tokens-grid {
+#ui-buttons .uikit-buttons-switcher button[aria-selected="true"] {
+  background: #4A509A;
+  color: #F7F8FC;
+}
+
+#ui-buttons .uikit-buttons-panel {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: stretch;
 }
 
-.tokens-grid div {
+#ui-buttons .uikit-buttons-panel[hidden] {
+  display: none !important;
+}
+
+#ui-buttons .uikit-buttons-image {
+  min-height: 0;
+  padding: 16px;
+  border-radius: 22px;
+  background: #FFFFFF;
   display: grid;
-  gap: 8px;
+  place-items: center;
+  overflow: hidden;
 }
 
-.tokens-grid b {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background: var(--token);
-  border: 1px solid rgba(74, 80, 154, 0.18);
+#ui-buttons .uikit-buttons-image img {
+  width: 100%;
+  height: clamp(260px, 36vh, 390px);
+  max-height: none;
+  object-fit: contain;
+  display: block;
+}
+
+#ui-buttons .uikit-buttons-panel p {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  align-self: stretch;
+  max-width: 980px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+[data-theme="dark"] #ui-buttons {
+  background: #292F72;
+}
+
+[data-theme="dark"] #ui-buttons .uikit-buttons-showcase {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] #ui-buttons .uikit-buttons-switcher button {
+  border-color: #F7F8FC;
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-buttons .uikit-buttons-switcher button[aria-selected="true"] {
+  background: #F7F8FC;
+  color: #292F72;
+}
+
+[data-theme="dark"] #ui-buttons .uikit-buttons-panel p {
+  color: #F7F8FC;
+}
+
+/* UI DROPDOWNS */
+
+#ui-dropdowns {
+  background: #F7F8FC;
+  justify-content: flex-start !important;
+  gap: 24px;
+  overflow: visible !important;
+}
+
+#ui-dropdowns .section-head {
+  gap: 10px;
+}
+
+#ui-dropdowns .uikit-dropdowns-showcase {
+  padding: 24px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  gap: 18px;
+}
+
+#ui-dropdowns .uikit-dropdowns-switcher {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
+}
+
+#ui-dropdowns .uikit-dropdowns-switcher button {
+  min-height: 48px;
+  padding: 0 22px;
+  border: 2px solid #4A509A;
+  border-radius: 999px;
+  background: transparent;
+  color: #4A509A;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+#ui-dropdowns .uikit-dropdowns-switcher button:hover {
+  transform: translateY(-2px);
+}
+
+#ui-dropdowns .uikit-dropdowns-switcher button[aria-selected="true"] {
+  background: #4A509A;
+  color: #F7F8FC;
+}
+
+#ui-dropdowns .uikit-dropdowns-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: stretch;
+}
+
+#ui-dropdowns .uikit-dropdowns-panel[hidden] {
+  display: none !important;
+}
+
+#ui-dropdowns .uikit-dropdowns-image {
+  min-height: 0;
+  padding: 16px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+#ui-dropdowns .uikit-dropdowns-image img {
+  width: 100%;
+  height: clamp(240px, 32vh, 340px);
+  max-height: none;
+  object-fit: contain;
+  display: block;
+}
+
+#ui-dropdowns .uikit-dropdowns-panel p {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  align-self: stretch;
+  max-width: 980px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+[data-theme="dark"] #ui-dropdowns {
+  background: #292F72;
+}
+
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-showcase {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-switcher button {
+  border-color: #F7F8FC;
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-switcher button[aria-selected="true"] {
+  background: #F7F8FC;
+  color: #292F72;
+}
+
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-panel p {
+  color: #F7F8FC;
+}
+
+/* UI PHOTO CARDS */
+
+#ui-tabs-checkboxes,
+#ui-cards,
+#ui-modals {
+  background: #F7F8FC;
+  justify-content: flex-start !important;
+  gap: 24px;
+}
+
+.uikit-photo-card,
+#ui-tabs-checkboxes .uikit-photo-card {
+  padding: 24px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.uikit-photo-card-image,
+#ui-tabs-checkboxes .uikit-photo-card-image {
+  min-height: 0;
+  padding: 16px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.uikit-photo-card-image img,
+#ui-tabs-checkboxes .uikit-photo-card-image img {
+  width: 100%;
+  height: clamp(260px, 36vh, 390px);
+  object-fit: contain;
+  display: block;
+}
+
+.uikit-photo-card-text {
+  display: grid;
+  align-content: start;
+}
+
+.uikit-photo-card-text p,
+#ui-tabs-checkboxes .uikit-photo-card-text p {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  max-width: 980px;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+#ui-tabs-checkboxes .uikit-tc-showcase {
+  display: none !important;
+}
+
+[data-theme="dark"] #ui-tabs-checkboxes,
+[data-theme="dark"] #ui-cards,
+[data-theme="dark"] #ui-modals {
+  background: #292F72;
+}
+
+[data-theme="dark"] .uikit-photo-card,
+[data-theme="dark"] #ui-tabs-checkboxes .uikit-photo-card {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] .uikit-photo-card-text p,
+[data-theme="dark"] #ui-tabs-checkboxes .uikit-photo-card-text p {
+  color: #F7F8FC;
 }
 
 /* GALLERY */
@@ -2149,24 +2827,31 @@ main {
   transform: none;
 }
 
-[data-theme="dark"] .contacts {
-  background: #292F72;
+[data-theme="dark"] #contacts.contacts {
+  background: #7A8BD5 !important;
 }
 
-[data-theme="dark"] .contacts-pattern {
-  opacity: 0.9;
-  filter: brightness(0) saturate(100%) invert(31%) sepia(20%) saturate(2347%) hue-rotate(207deg) brightness(89%) contrast(88%);
+[data-theme="dark"] #contacts .contacts-pattern {
+  opacity: 1 !important;
+  filter: brightness(0) saturate(100%) invert(45%) sepia(44%) saturate(848%) hue-rotate(197deg) brightness(89%) contrast(84%) !important;
+  mix-blend-mode: normal !important;
 }
 
-[data-theme="dark"] .contacts .eyebrow,
-[data-theme="dark"] .contacts h2,
-[data-theme="dark"] .contacts p:not(.eyebrow) {
-  color: #F7F8FC;
+[data-theme="dark"] #contacts .contacts-inner {
+  position: relative;
+  z-index: 2;
 }
 
-[data-theme="dark"] .contacts .button {
-  background: #F7F8FC;
-  color: #292F72;
+[data-theme="dark"] #contacts .eyebrow,
+[data-theme="dark"] #contacts h2,
+[data-theme="dark"] #contacts p:not(.eyebrow) {
+  color: #F7F8FC !important;
+}
+
+[data-theme="dark"] #contacts .button {
+  background: #F7F8FC !important;
+  color: #292F72 !important;
+  border-color: #F7F8FC !important;
 }
 
 /* MODALS */
@@ -2210,6 +2895,34 @@ main {
   cursor: pointer;
 }
 
+/* BURGER */
+
+.burger {
+  display: none !important;
+  position: fixed;
+  left: 18px;
+  top: 18px;
+  z-index: 1500;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: url("../assets/images/burger-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.burger span {
+  display: none !important;
+}
+
+[data-theme="dark"] .burger {
+  background-image: url("../assets/images/burger-dark.svg");
+}
+
 /* SCROLL TOP */
 
 .scroll-top {
@@ -2217,109 +2930,37 @@ main {
   right: 24px;
   bottom: 24px;
   z-index: 900;
-  width: 54px;
-  height: 54px;
+  width: 66px;
+  height: 66px;
   border: 0;
-  border-radius: 50%;
-  background: #4A509A;
-  color: white;
-  font-size: 24px;
+  border-radius: 20px;
+  background-color: #4A509A;
+  background-image: url("../assets/images/arrow-up.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   display: none;
+  transition: 0.24s ease;
 }
 
 .scroll-top.is-visible {
   display: block;
 }
 
-/* БУРГЕР — ИКОНКА ИЗ ФАЙЛА */
-
-.burger {
-  display: none;
-  position: fixed;
-  left: 18px;
-  top: 18px;
-  z-index: 1500;
-
-  width: 58px;
-  height: 58px;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  background-image: url("assets/images/burger-light.png"); /* или .svg */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  cursor: pointer;
+.scroll-top:hover {
+  transform: translateY(-3px);
 }
 
-/* если внутри кнопки остались span — скрываем */
-.burger span {
-  display: none;
+[data-theme="dark"] .scroll-top {
+  background-color: #4A509A;
 }
 
-/* тёмная тема */
-[data-theme="dark"] .burger {
-  background-image: url("assets/images/burger-dark.png"); /* или .svg */
-}
-
-/* мобильная версия */
-@media (max-width: 820px) {
-  .burger {
-    display: block;
-  }
-}
-
-/* STICKY */
-
-@media (min-width: 821px) {
-  main > .screen:not(#gallery):not(#contacts) {
-    position: sticky;
-    top: 0;
-  }
-
-  main > #meaning,
-  main > #graphics {
-    height: 100vh;
-    min-height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    justify-content: flex-start;
-  }
-
-  #meaning .acc-panel {
-    max-height: 360px;
-    overflow-y: auto;
-  }
-
-  main > #gallery,
-  main > #contacts {
-    position: relative;
-    top: auto;
-    min-height: 100vh;
-    overflow: visible;
-  }
-}
-
-body.nav-jump main > .screen,
-body.nav-jump main > #meaning,
-body.nav-jump main > #graphics,
-body.nav-jump main > #gallery,
-body.nav-jump main > #contacts {
-  position: relative !important;
-  top: auto !important;
-  height: auto !important;
-  min-height: 100vh;
-  overflow: visible !important;
-  z-index: auto !important;
-}
-
-body.nav-jump main > .hero {
-  overflow: hidden !important;
-}
-
-/* UNIFIED CARD TEXT — ГЛАВНАЯ ПРАВКА */
+/* UNIFIED CARD TEXT */
 
 .logo-main-text p,
 #visual .visual-panel-content p,
@@ -2362,7 +3003,197 @@ body.nav-jump main > .hero {
   color: #F7F8FC;
 }
 
+/* DESKTOP STICKY + CONCEPT FIX */
+
+@media (min-width: 821px) {
+  html,
+  body {
+    overflow-x: visible !important;
+  }
+
+  main {
+    overflow: visible !important;
+  }
+
+  main > .screen:not(#gallery):not(#contacts) {
+    position: sticky !important;
+    top: 0 !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  /*
+    Главный фикс:
+    весь блок "Концепция" скроллится целиком.
+    Скролл НЕ на плашках, НЕ на accordion, а на самом #meaning.
+  */
+  main > #meaning.screen {
+    position: sticky !important;
+    top: 0 !important;
+
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    justify-content: flex-start !important;
+
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 1 !important;
+  }
+
+  #meaning .section-head,
+  #meaning .accordion,
+  #meaning .acc-item,
+  #meaning .acc-panel {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #meaning .accordion {
+    padding-bottom: 80px;
+  }
+
+  #meaning .acc-panel {
+    min-height: 260px !important;
+  }
+
+  main > #visual.screen {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+  }
+
+  main > #graphics.screen {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    justify-content: flex-start !important;
+    z-index: auto !important;
+  }
+
+  main > #gallery,
+  main > #contacts {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  main > #meaning.screen::-webkit-scrollbar,
+  main > #graphics.screen::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  main > #meaning.screen::-webkit-scrollbar-track,
+  main > #graphics.screen::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  main > #meaning.screen::-webkit-scrollbar-thumb,
+  main > #graphics.screen::-webkit-scrollbar-thumb {
+    background: #4A509A;
+    border-radius: 999px;
+  }
+
+  [data-theme="dark"] main > #meaning.screen::-webkit-scrollbar-thumb,
+  [data-theme="dark"] main > #graphics.screen::-webkit-scrollbar-thumb {
+    background: #F7F8FC;
+  }
+}
+
+/* NAV JUMP FIX */
+
+body.nav-jump main > .screen,
+body.nav-jump main > #meaning,
+body.nav-jump main > #graphics,
+body.nav-jump main > #gallery,
+body.nav-jump main > #contacts {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  overflow: visible !important;
+  z-index: auto !important;
+}
+
+body.nav-jump main > #cover.hero {
+  overflow: hidden !important;
+}
+
 /* ADAPTIVE */
+
+html,
+body {
+  max-width: 100%;
+}
+
+main,
+.screen {
+  max-width: 100%;
+}
+
+.hero-inner,
+.contacts-inner,
+.contents-grid,
+.cards,
+.ui-grid,
+.gallery,
+.size-scale,
+.misuse-grid,
+.typography-layout,
+#visual .visual-panel,
+.logo-main-card,
+.construction-single-card,
+.clearspace-single-card,
+.color-version-card,
+#graphics .graphics-card-main,
+.visual-menu-grid,
+.uikit-menu-grid,
+.uikit-photo-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.contents-card,
+.card,
+.ui-card,
+.gallery-card,
+.logo-main-card,
+.construction-single-card,
+.clearspace-single-card,
+.color-version-card,
+#visual .visual-tabs,
+#graphics .graphics-showcase-card,
+#colors .color-palette-card,
+#ui-colors .color-palette-card,
+.type-playground-card,
+.type-info-card,
+.uikit-menu-card,
+.uikit-photo-card {
+  min-width: 0;
+  max-width: 100%;
+}
 
 @media (max-width: 1200px) {
   .hero {
@@ -2374,14 +3205,14 @@ body.nav-jump main > .hero {
   }
 
   .hero-mascot-wrap {
-    justify-content: center;
-    margin-right: 0;
+    justify-content: flex-end;
+    margin-right: -80px;
     transform: translateY(60px);
   }
 
   .hero-mascot {
-    width: min(80%, 520px);
-    max-width: 100%;
+    width: min(80vw, 520px);
+    max-width: none;
   }
 
   .two-columns,
@@ -2436,12 +3267,17 @@ body.nav-jump main > .hero {
       "text";
   }
 
-  #colors .color-palette-panel {
+  #colors .color-palette-panel,
+  #ui-colors .color-palette-panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .typography-layout,
-  #graphics .graphics-card-main {
+  #graphics .graphics-card-main,
+  #ui-buttons .uikit-buttons-panel,
+  #ui-dropdowns .uikit-dropdowns-panel,
+  .uikit-photo-card,
+  #ui-tabs-checkboxes .uikit-photo-card {
     grid-template-columns: 1fr;
   }
 
@@ -2472,6 +3308,27 @@ body.nav-jump main > .hero {
   .contacts p:not(.eyebrow) {
     font-size: 22px;
   }
+
+  .visual-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual-menu-card,
+  .visual-menu-card:nth-child(4),
+  .visual-menu-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .uikit-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #ui-buttons .uikit-buttons-image img,
+  #ui-dropdowns .uikit-dropdowns-image img,
+  .uikit-photo-card-image img,
+  #ui-tabs-checkboxes .uikit-photo-card-image img {
+    height: 46vh;
+  }
 }
 
 @media (max-width: 820px) {
@@ -2480,8 +3337,16 @@ body.nav-jump main > .hero {
     --text-card-line: 1.5;
   }
 
+  html,
+  body,
+  main,
+  .screen {
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
   .burger {
-    display: block;
+    display: block !important;
   }
 
   .sidebar {
@@ -2498,7 +3363,20 @@ body.nav-jump main > .hero {
     margin-left: 0;
   }
 
+  main > .screen,
+  main > #meaning,
+  main > #graphics,
+  main > #visual {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
   .screen {
+    width: 100%;
     position: relative;
     min-height: auto;
     padding: 90px 22px 60px;
@@ -2529,7 +3407,7 @@ body.nav-jump main > .hero {
   }
 
   #cover.hero {
-    min-height: 100svh;
+    min-height: 100svh !important;
     padding: 88px 22px 44px;
     align-items: flex-start;
     overflow: hidden;
@@ -2537,12 +3415,16 @@ body.nav-jump main > .hero {
 
   #cover .hero-inner {
     width: 100%;
+    max-width: 100%;
     grid-template-columns: 1fr;
     align-items: start;
     gap: 24px;
+    position: relative;
+    z-index: 2;
   }
 
-  #cover .hero-copy {
+  #cover .hero-copy,
+  #cover .hero-actions {
     width: 100%;
     max-width: 100%;
   }
@@ -2572,7 +3454,6 @@ body.nav-jump main > .hero {
   }
 
   #cover .hero-actions {
-    width: 100%;
     margin-top: 28px;
     display: grid;
     grid-template-columns: 1fr;
@@ -2591,17 +3472,20 @@ body.nav-jump main > .hero {
   }
 
   #cover .hero-mascot-wrap {
-    width: calc(100% + 22px);
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin: 28px -22px 0 0;
-    transform: translateY(30px);
+    position: relative !important;
+    width: calc(100vw - 44px) !important;
+    max-width: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    margin: 26px 0 0 0 !important;
+    transform: translateX(22px) translateY(-30px) !important;
   }
 
   #cover .hero-mascot {
-    width: min(78vw, 320px);
-    max-width: none;
-    height: auto;
+    width: min(82vw, 340px) !important;
+    max-width: none !important;
+    height: auto !important;
   }
 
   #contents .section-head {
@@ -2616,7 +3500,10 @@ body.nav-jump main > .hero {
   .gallery,
   .size-scale,
   .misuse-grid,
-  .tokens-grid {
+  .tokens-grid,
+  .visual-menu-grid,
+  .uikit-menu-grid,
+  #ui-colors .color-palette-panel {
     grid-template-columns: 1fr;
   }
 
@@ -2626,6 +3513,14 @@ body.nav-jump main > .hero {
 
   #meaning .section-head {
     margin-bottom: 24px;
+  }
+
+  #meaning .accordion,
+  #meaning .acc-item,
+  #meaning .acc-panel {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   #meaning .accordion,
@@ -2663,21 +3558,54 @@ body.nav-jump main > .hero {
   .logo-main-card,
   .construction-single-card,
   .clearspace-single-card,
-  .color-version-card {
+  .color-version-card,
+  #colors .color-palette-card,
+  #ui-colors .color-palette-card,
+  .type-playground-card,
+  .type-info-card,
+  #graphics .graphics-showcase-card,
+  .uikit-menu-card,
+  .uikit-typography-image-card,
+  .uikit-grid-image-card,
+  #ui-buttons .uikit-buttons-showcase,
+  #ui-dropdowns .uikit-dropdowns-showcase,
+  .uikit-photo-card,
+  #ui-tabs-checkboxes .uikit-photo-card {
     padding: 22px;
     border-radius: 26px;
   }
 
-  #visual .visual-switcher {
+  #visual .visual-switcher,
+  .construction-switcher,
+  .clearspace-switcher,
+  .brand-color-switcher,
+  #logo-colors .color-version-switcher,
+  #colors .color-palette-tabs,
+  #ui-colors .color-palette-tabs,
+  #graphics .graphics-switcher,
+  #ui-buttons .uikit-buttons-switcher,
+  #ui-dropdowns .uikit-dropdowns-switcher {
+    width: 100%;
+    display: grid;
     grid-template-columns: 1fr;
   }
 
-  #visual .visual-switcher button {
+  #visual .visual-switcher button,
+  #logo-construction .construction-option,
+  #logo-clearspace .clearspace-option,
+  #logo-colors .color-version-option,
+  #logo-colors .brand-color-option,
+  #graphics .graphics-mode,
+  #colors .color-palette-tabs button,
+  #ui-colors .color-palette-tabs button,
+  .uikit-theme-card-toggle,
+  #ui-buttons .uikit-buttons-switcher button,
+  #ui-dropdowns .uikit-dropdowns-switcher button {
     width: 100%;
+    max-width: 100%;
     min-height: 56px;
     padding: 0 22px;
     font-size: 17px;
-    border-radius: 999px;
   }
 
   #visual .visual-panel {
@@ -2700,42 +3628,31 @@ body.nav-jump main > .hero {
     border-radius: 22px;
   }
 
-  .construction-switcher,
-  .clearspace-switcher,
-  .brand-color-switcher,
-  #logo-colors .color-version-switcher {
-    grid-template-columns: 1fr;
+  .logo-main-image img,
+  .construction-single-image img,
+  .clearspace-single-image img,
+  .color-version-image img {
+    width: 120%;
+    max-width: none;
   }
 
-  #logo-construction .construction-option,
   #logo-construction .construction-build-toggle {
     width: 100%;
     min-height: 56px;
+    height: 56px;
     padding: 0 22px;
     font-size: 17px;
   }
 
   #logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
-    margin-top: 190px;
+    margin-top: 230px;
   }
 
   #logo-sizes .size-scale,
-  #colors .color-palette-panel {
-    grid-template-columns: 1fr;
-  }
-
-  #colors .color-palette-card,
-  .type-playground-card,
-  .type-info-card,
-  #graphics .graphics-showcase-card {
-    padding: 22px;
-    border-radius: 26px;
-  }
-
-  #colors .color-palette-tabs,
-  #graphics .graphics-switcher {
-    width: 100%;
-    display: grid;
+  #colors .color-palette-panel,
+  .type-controls,
+  .font-cards,
+  .uikit-typography-images {
     grid-template-columns: 1fr;
   }
 
@@ -2747,11 +3664,6 @@ body.nav-jump main > .hero {
     min-height: 260px;
     padding: 24px;
     border-radius: 22px;
-  }
-
-  .type-controls,
-  .font-cards {
-    grid-template-columns: 1fr;
   }
 
   .type-preview-surface {
@@ -2767,12 +3679,36 @@ body.nav-jump main > .hero {
     grid-column: span 1;
   }
 
+  .uikit-menu-card,
+  .visual-menu-card {
+    min-height: 170px;
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .uikit-color-card-top {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .uikit-typography-images img,
+  .uikit-grid-image-card img,
+  #ui-buttons .uikit-buttons-image img,
+  #ui-dropdowns .uikit-dropdowns-image img,
+  .uikit-photo-card-image img,
+  #ui-tabs-checkboxes .uikit-photo-card-image img {
+    height: auto;
+    max-height: none;
+    border-radius: 22px;
+  }
+
   .contacts {
     min-height: auto;
     padding: 100px 22px 60px;
   }
 
   .contacts-inner {
+    grid-template-columns: 1fr;
     align-items: start;
   }
 
@@ -2808,426 +3744,16 @@ body.nav-jump main > .hero {
   .contacts-mascot {
     width: 240px;
   }
-}
 
-/* ПОСТРОЕНИЕ — кнопка как "Перейти к разделу" */
-
-#logo-construction .construction-single-content {
-  display: flex;
-  flex-direction: column;
-}
-
-#logo-construction .construction-build-toggle {
-  align-self: flex-start;
-  margin-top: auto;
-
-  width: fit-content;
-  min-width: 0;
-  min-height: 64px;
-  height: 64px;
-  padding: 0 32px;
-
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-  background: transparent;
-  color: #4A509A;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-
-  box-shadow: none;
-  cursor: pointer;
-  transition: 0.24s ease;
-}
-
-#logo-construction .construction-build-toggle:hover {
-  transform: translateY(-3px);
-  box-shadow: none;
-}
-
-/* тёмная тема */
-
-[data-theme="dark"] #logo-construction .construction-build-toggle {
-  border-color: #F7F8FC;
-  background: transparent;
-  color: #F7F8FC;
-}
-
-/* мобильная версия */
-
-@media (max-width: 820px) {
-  #logo-construction .construction-build-toggle {
-    width: 100%;
-    min-height: 56px;
-    height: 56px;
-    padding: 0 22px;
-    font-size: 17px;
+  .scroll-top {
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    background-size: 22px 22px;
   }
 }
-
-/* ЕДИНЫЙ СТИЛЬ КНОПОК В КАРТОЧКАХ — КАК В ОБЛОЖКЕ */
-
-/* Все кнопки-переключатели внутри карточек */
-#visual .visual-switcher button,
-#logo-construction .construction-option,
-#logo-clearspace .clearspace-option,
-#logo-colors .color-version-option,
-#logo-colors .brand-color-option,
-#graphics .graphics-mode,
-#colors .color-palette-tabs button {
-  min-height: 64px;
-  padding: 0 32px;
-
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-
-  background: transparent;
-  color: #4A509A;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  box-shadow: none;
-  cursor: pointer;
-  transition: 0.24s ease;
-}
-
-/* Наведение */
-#visual .visual-switcher button:hover,
-#logo-construction .construction-option:hover,
-#logo-clearspace .clearspace-option:hover,
-#logo-colors .color-version-option:hover,
-#logo-colors .brand-color-option:hover,
-#graphics .graphics-mode:hover,
-#colors .color-palette-tabs button:hover {
-  transform: translateY(-3px);
-  background: transparent;
-  box-shadow: none;
-}
-
-/* Активные кнопки */
-#visual .visual-switcher button[aria-selected="true"],
-#logo-construction .construction-option.is-active,
-#logo-clearspace .clearspace-option.is-active,
-#logo-colors .color-version-option.is-active,
-#logo-colors .brand-color-option.is-active,
-#graphics .graphics-mode.is-active,
-#colors .color-palette-tabs button[aria-selected="true"] {
-  background: #4A509A;
-  color: #F7F8FC;
-  border-color: #4A509A;
-}
-
-/* Охранное поле — чтобы кнопки красиво стояли в ряд */
-#logo-clearspace .clearspace-switcher {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-/* Построение */
-#logo-construction .construction-switcher {
-  gap: 12px;
-}
-
-/* Цветовые версии */
-#logo-colors .color-version-switcher,
-#logo-colors .brand-color-switcher {
-  gap: 12px;
-}
-
-/* Тёмная тема */
-[data-theme="dark"] #visual .visual-switcher button,
-[data-theme="dark"] #logo-construction .construction-option,
-[data-theme="dark"] #logo-clearspace .clearspace-option,
-[data-theme="dark"] #logo-colors .color-version-option,
-[data-theme="dark"] #logo-colors .brand-color-option,
-[data-theme="dark"] #graphics .graphics-mode,
-[data-theme="dark"] #colors .color-palette-tabs button {
-  border-color: #F7F8FC;
-  background: transparent;
-  color: #F7F8FC;
-}
-
-[data-theme="dark"] #visual .visual-switcher button[aria-selected="true"],
-[data-theme="dark"] #logo-construction .construction-option.is-active,
-[data-theme="dark"] #logo-clearspace .clearspace-option.is-active,
-[data-theme="dark"] #logo-colors .color-version-option.is-active,
-[data-theme="dark"] #logo-colors .brand-color-option.is-active,
-[data-theme="dark"] #graphics .graphics-mode.is-active,
-[data-theme="dark"] #colors .color-palette-tabs button[aria-selected="true"] {
-  background: #F7F8FC;
-  color: #292F72;
-  border-color: #F7F8FC;
-}
-
-/* Мобильная версия */
-@media (max-width: 820px) {
-  #visual .visual-switcher button,
-  #logo-construction .construction-option,
-  #logo-clearspace .clearspace-option,
-  #logo-colors .color-version-option,
-  #logo-colors .brand-color-option,
-  #graphics .graphics-mode,
-  #colors .color-palette-tabs button {
-    width: 100%;
-    min-height: 56px;
-    padding: 0 22px;
-    font-size: 17px;
-  }
-
-  #logo-clearspace .clearspace-switcher,
-  #logo-construction .construction-switcher,
-  #logo-colors .color-version-switcher,
-  #logo-colors .brand-color-switcher {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ЦВЕТОВЫЕ ВЕРСИИ — отступ текста от кнопок цветов */
-
-#logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
-  margin-top: 100px;
-}
-
-/* мобильная версия */
-@media (max-width: 820px) {
-  #logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
-    margin-top: 230px;
-  }
-}
-
-/* ЦВЕТОВЫЕ ВЕРСИИ — кнопки цветов без подписей */
-
-#logo-colors .brand-color-option {
-  min-height: 54px !important;
-  height: 54px !important;
-  padding: 0 !important;
-
-  font-size: 0 !important;
-  line-height: 0 !important;
-  color: transparent !important;
-
-  border-radius: 999px !important;
-  box-shadow: none !important;
-  overflow: hidden !important;
-}
-
-/* убираем маленький квадратик */
-#logo-colors .brand-color-option span {
-  display: none !important;
-}
-
-/* Primary */
-#logo-colors .brand-color-option[data-brand-color="primary"] {
-  background: #4A509A !important;
-  border: 2px solid #4A509A !important;
-}
-
-/* Soft — цвет совпадает с карточкой, поэтому белая обводка */
-#logo-colors .brand-color-option[data-brand-color="soft"] {
-  background: #ECE8FF !important;
-  border: 2px solid #FFFFFF !important;
-}
-
-/* Dark card */
-#logo-colors .brand-color-option[data-brand-color="dark"] {
-  background: #7A8BD5 !important;
-  border: 2px solid #7A8BD5 !important;
-}
-
-/* активный цвет */
-#logo-colors .brand-color-option.is-active {
-  outline: 3px solid #FFFFFF !important;
-  outline-offset: 3px !important;
-}
-
-/* чтобы у светлой кнопки активная обводка тоже была видна */
-#logo-colors .brand-color-option[data-brand-color="soft"].is-active {
-  outline: 3px solid #FFFFFF !important;
-  outline-offset: 3px !important;
-}
-
-/* мобильная версия */
-@media (max-width: 820px) {
-  #logo-colors .brand-color-option {
-    width: 100% !important;
-    min-height: 54px !important;
-    height: 54px !important;
-  }
-}
-
-/* ФИРМЕННЫЕ ЦВЕТА — обычная кнопка залитая, "Скопировано" с обводкой */
-
-/* обычное состояние */
-#colors .color-swatch-card .swatch-info em {
-  min-height: 48px;
-  margin-top: auto;
-  border: 2px solid #4A509A;
-  border-radius: 999px;
-
-  background: #4A509A;
-  color: #F7F8FC;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1;
-
-  transition: 0.24s ease;
-}
-
-/* после клика: Скопировано */
-#colors .color-swatch-card.is-copied .swatch-info em {
-  background: transparent;
-  color: #4A509A;
-  border-color: #4A509A;
-}
-
-/* тёмная тема — обычное состояние */
-[data-theme="dark"] #colors .color-swatch-card .swatch-info em {
-  background: #F7F8FC;
-  color: #292F72;
-  border-color: #F7F8FC;
-}
-
-/* тёмная тема — Скопировано */
-[data-theme="dark"] #colors .color-swatch-card.is-copied .swatch-info em {
-  background: transparent;
-  color: #F7F8FC;
-  border-color: #F7F8FC;
-}
-
-/* ТИПОГРАФИКА — плашки шрифтов кликабельные */
-
-#typography .font-card {
-  cursor: pointer;
-  transition: 0.24s ease;
-}
-
-#typography .font-card:hover {
-  transform: translateY(-3px);
-}
-
-#typography .font-card.is-active {
-  outline: 2px solid #4A509A;
-  outline-offset: 4px;
-}
-
-[data-theme="dark"] #typography .font-card.is-active {
-  outline-color: #F7F8FC;
-}
-
-/* МОБИЛЬНАЯ ВЕРСИЯ — ФИКС ВЫЕЗДА ВПРАВО */
-
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-main,
-.screen {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* чтобы grid/flex-элементы не растягивали страницу */
-.hero-inner,
-.contacts-inner,
-.contents-grid,
-.cards,
-.ui-grid,
-.gallery,
-.size-scale,
-.misuse-grid,
-.typography-layout,
-#visual .visual-panel,
-.logo-main-card,
-.construction-single-card,
-.clearspace-single-card,
-.color-version-card,
-#graphics .graphics-card-main {
-  min-width: 0;
-  max-width: 100%;
-}
-
-/* чтобы карточки и картинки не выталкивали макет */
-.contents-card,
-.card,
-.ui-card,
-.gallery-card,
-.logo-main-card,
-.construction-single-card,
-.clearspace-single-card,
-.color-version-card,
-#visual .visual-tabs,
-#graphics .graphics-showcase-card,
-#colors .color-palette-card,
-.type-playground-card,
-.type-info-card {
-  min-width: 0;
-  max-width: 100%;
-}
-
-/* мобильная правка обложки */
-@media (max-width: 820px) {
-  #cover.hero {
-    overflow: hidden;
-  }
-
-  #cover .hero-inner,
-  #cover .hero-copy,
-  #cover .hero-actions {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  #cover .hero-mascot-wrap {
-    width: 100%;
-    max-width: 100%;
-    margin-right: 0;
-    justify-content: flex-end;
-    transform: translateY(30px);
-  }
-
-  #cover .hero-mascot {
-    width: min(78vw, 320px);
-    max-width: 100%;
-  }
-
-  .screen {
-    width: 100%;
-  }
-
-  .button,
-  .button.secondary,
-  #visual .visual-switcher button,
-  #logo-construction .construction-option,
-  #logo-clearspace .clearspace-option,
-  #logo-colors .color-version-option,
-  #logo-colors .brand-color-option,
-  #graphics .graphics-mode,
-  #colors .color-palette-tabs button {
-    max-width: 100%;
-  }
-}
-
-/* МОБИЛЬНАЯ ВЕРСИЯ 375px — фикс выезда текста и бегунков вправо */
 
 @media (max-width: 430px) {
   html,
@@ -3249,7 +3775,6 @@ main,
     padding-right: 18px;
   }
 
-  /* весь текст принудительно переносится */
   h1,
   h2,
   h3,
@@ -3265,7 +3790,6 @@ main,
     word-break: normal;
   }
 
-  /* карточки не могут быть шире экрана */
   .contents-card,
   .card,
   .ui-card,
@@ -3278,14 +3802,16 @@ main,
   #visual .visual-panel,
   #graphics .graphics-showcase-card,
   #colors .color-palette-card,
+  #ui-colors .color-palette-card,
   .type-playground-card,
-  .type-info-card {
+  .type-info-card,
+  .uikit-menu-card,
+  .uikit-photo-card {
     width: 100%;
     max-width: 100%;
     min-width: 0;
   }
 
-  /* внутренние сетки не растягивают страницу */
   .hero-inner,
   .contacts-inner,
   .contents-grid,
@@ -3300,13 +3826,14 @@ main,
   .construction-single-card,
   .clearspace-single-card,
   .color-version-card,
-  #graphics .graphics-card-main {
+  #graphics .graphics-card-main,
+  .visual-menu-grid,
+  .uikit-menu-grid {
     width: 100%;
     max-width: 100%;
     min-width: 0;
   }
 
-  /* фикс бегунка в графике */
   #graphics .graphics-pagination {
     width: 100%;
     max-width: 100%;
@@ -3323,409 +3850,2221 @@ main,
     max-width: 100%;
   }
 
-  /* фикс бегунков в типографике */
   .type-controls,
-  .type-controls label {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
+  .type-controls label,
   .type-controls input[type="range"] {
     width: 100%;
     max-width: 100%;
     min-width: 0;
   }
+}
 
-  /* фикс кнопок */
-  .button,
-  .button.secondary,
-  #visual .visual-switcher button,
-  #logo-construction .construction-option,
-  #logo-clearspace .clearspace-option,
-  #logo-colors .color-version-option,
-  #logo-colors .brand-color-option,
-  #graphics .graphics-mode,
-  #colors .color-palette-tabs button {
+/* =========================================================
+   НАСТОЯЩИЙ ФИКС БЛОКА "КОНЦЕПЦИЯ"
+   Скроллится весь контент внутри блока: заголовок + аккордеон
+   ========================================================= */
+
+@media (min-width: 821px) {
+  main > #meaning.screen {
+    position: sticky !important;
+    top: 0 !important;
+
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    display: block !important;
+
+    z-index: 1 !important;
+  }
+
+  #meaning .meaning-scroll {
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    height: 100vh;
+    max-height: 100vh;
+
+    padding: 120px clamp(56px, 7vw, 96px) 160px;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #meaning .section-head {
+    flex: 0 0 auto;
+    margin-bottom: 0 !important;
+  }
+
+  #meaning .accordion {
+    flex: 0 0 auto;
+    display: grid;
+    gap: 12px;
+
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+    padding-bottom: 80px;
+  }
+
+  #meaning .acc-item {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #meaning .acc-panel {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    min-height: 260px !important;
+  }
+
+  main > #visual.screen {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+  }
+
+  #meaning .meaning-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #meaning .meaning-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #meaning .meaning-scroll::-webkit-scrollbar-thumb {
+    background: #4A509A;
+    border-radius: 999px;
+  }
+
+  [data-theme="dark"] #meaning .meaning-scroll::-webkit-scrollbar-thumb {
+    background: #F7F8FC;
   }
 }
 
-/* КОНТАКТЫ — ТЁМНАЯ ТЕМА 1 В 1 КАК ОБЛОЖКА */
+@media (max-width: 820px) {
+  main > #meaning.screen {
+    position: relative !important;
+    top: auto !important;
 
-[data-theme="dark"] #contacts.contacts {
-  background: #7A8BD5 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+
+    padding: 90px 22px 60px !important;
+
+    overflow: visible !important;
+
+    display: flex !important;
+  }
+
+  #meaning .meaning-scroll {
+    height: auto !important;
+    max-height: none !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #meaning .accordion,
+  #meaning .acc-item,
+  #meaning .acc-panel {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
 }
 
-/* паттерн как в обложке */
-[data-theme="dark"] #contacts .contacts-pattern {
-  opacity: 1 !important;
-  filter: brightness(0) saturate(100%) invert(45%) sepia(44%) saturate(848%) hue-rotate(197deg) brightness(89%) contrast(84%) !important;
-  mix-blend-mode: normal !important;
+/* =========================================================
+   ФИКС ПЕРЕХОДОВ ПО БОКОВОМУ МЕНЮ ПОСЛЕ .meaning-scroll
+   ========================================================= */
+
+body.nav-jump main > #meaning.screen {
+  position: relative !important;
+  top: auto !important;
+
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  padding: 0 !important;
+
+  z-index: auto !important;
 }
 
-/* весь контент поверх паттерна */
-[data-theme="dark"] #contacts .contacts-inner {
-  position: relative;
-  z-index: 2;
+body.nav-jump #meaning .meaning-scroll {
+  height: auto !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  padding: 120px clamp(56px, 7vw, 96px) 160px !important;
 }
 
-/* текст как в обложке */
-[data-theme="dark"] #contacts .eyebrow,
-[data-theme="dark"] #contacts h2,
-[data-theme="dark"] #contacts p:not(.eyebrow) {
-  color: #F7F8FC !important;
+body.nav-jump main > #visual.screen,
+body.nav-jump main > #graphics.screen,
+body.nav-jump main > .screen:not(#cover):not(#contacts) {
+  position: relative !important;
+  top: auto !important;
+
+  height: auto !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+
+  z-index: auto !important;
 }
 
-/* кнопка как в обложке */
-[data-theme="dark"] #contacts .button {
-  background: #F7F8FC !important;
-  color: #292F72 !important;
-  border-color: #F7F8FC !important;
+@media (max-width: 820px) {
+  body.nav-jump #meaning .meaning-scroll {
+    padding: 0 !important;
+  }
 }
 
-/* БУРГЕР — PNG / SVG ИКОНКА */
+/* =========================================================
+   БОКОВОЕ МЕНЮ — выпадающие списки Логотип / UI Kit
+   ========================================================= */
 
-.burger {
-  display: none !important;
-  position: fixed;
-  left: 18px;
-  top: 18px;
-  z-index: 1500;
+.toc-dropdown {
+  display: grid;
+  gap: 4px;
+}
 
-  width: 58px;
-  height: 58px;
+.toc-dropdown-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 4px;
+  align-items: center;
+}
+
+.toc-dropdown-link {
+  min-width: 0;
+}
+
+.toc-dropdown-toggle {
+  width: 38px;
+  height: 36px;
   padding: 0;
-
   border: 0;
-  background-color: transparent;
-  background-image: url("../assets/images/burger-light.svg");
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.22s ease;
+}
+
+.toc-dropdown-toggle span {
+  width: 14px;
+  height: 14px;
+  display: block;
+  background-color: currentColor;
+  clip-path: polygon(50% 72%, 12% 30%, 88% 30%);
+  transition: 0.22s ease;
+}
+
+.toc-dropdown-toggle:hover {
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.toc-dropdown.is-open .toc-dropdown-toggle {
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.toc-dropdown.is-open .toc-dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+.toc-submenu {
+  display: grid;
+  gap: 3px;
+  margin: 2px 0 6px 10px;
+  padding: 4px 0 4px 12px;
+  border-left: 1px solid var(--line);
+}
+
+.toc-submenu[hidden] {
+  display: none !important;
+}
+
+.toc-submenu a {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 12.5px;
+}
+
+.toc-submenu a::before {
+  left: 4px;
+  font-size: 15px;
+}
+
+[data-theme="dark"] .toc-dropdown-toggle {
+  color: #D8DAF0;
+}
+
+[data-theme="dark"] .toc-dropdown-toggle:hover,
+[data-theme="dark"] .toc-dropdown.is-open .toc-dropdown-toggle {
+  background: rgba(247, 248, 252, 0.08);
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] .toc-submenu {
+  border-left-color: rgba(255, 255, 255, 0.14);
+}
+
+#colors .color-swatch-card {
+  height: 420px;
+  min-height: 420px;
+}
+
+#colors .color-swatch-card .swatch-info {
+  height: 250px;
+  min-height: 250px;
+}
+
+/* ОХРАННОЕ ПОЛЕ — уменьшение изображения */
+
+#logo-clearspace .clearspace-single-image img {
+  width: min(100%, 480px);
+  max-width: 360px;
+}
+
+#logo-colors .color-version-switcher {
+  grid-area: switcher;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* ЦВЕТОВЫЕ ВЕРСИИ — расположение как в блоке "Охранное поле" */
+
+#logo-colors .color-version-card {
+  grid-template-areas: none !important;
+}
+
+#logo-colors .color-version-content {
+  display: flex !important;
+  flex-direction: column;
+  gap: 26px;
+  padding: 8px 4px;
+}
+
+#logo-colors .color-version-image,
+#logo-colors .color-version-text,
+#logo-colors .color-version-switcher,
+#logo-colors .brand-color-switcher {
+  grid-area: auto !important;
+}
+
+#logo-colors .color-version-switcher {
+  order: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#logo-colors .color-version-text {
+  order: 2;
+  margin-top: 0 !important;
+}
+
+#logo-colors .brand-color-switcher {
+  order: 3;
+  width: 100%;
+  margin-top: auto;
+  align-self: stretch;
+}
+
+#logo-colors .brand-color-switcher[hidden] {
+  display: none !important;
+}
+
+#logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 820px) {
+  #logo-colors .color-version-switcher {
+    grid-template-columns: 1fr;
+  }
+
+  #logo-colors .brand-color-switcher {
+    margin-top: 0;
+  }
+
+  #logo-colors .color-version-card:has(.brand-color-switcher:not([hidden])) .color-version-text {
+    margin-top: 0 !important;
+  }
+}
+
+/* ФИНАЛЬНЫЙ ФИКС: кнопки цветов в блоке "Цветовые версии" */
+
+#logo-colors .brand-color-option {
+  background: var(--brand-c) !important;
+  border: 2px solid var(--brand-c) !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+#logo-colors .brand-color-option.is-active {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 3px !important;
+}
+
+[data-theme="dark"] #logo-colors .brand-color-option {
+  background: var(--brand-c) !important;
+  border-color: var(--brand-c) !important;
+  color: transparent !important;
+}
+
+#logo-colors .color-version-image img {
+  width: min(100%, 360px) !important;
+  max-width: 360px !important;
+}
+
+/* ЦВЕТОВЫЕ ВЕРСИИ — фон карточки и обводка лавандовой кнопки */
+
+#logo-colors .color-version-image {
+  transition: background-color 0.25s ease;
+}
+
+#logo-colors .brand-color-option[data-brand-color="lavender"] {
+  border-color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.12) !important;
+}
+
+/* МИНИМАЛЬНЫЕ РАЗМЕРЫ — одинаковый размер карточек с фото */
+
+#logo-sizes .size-logo {
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+#logo-sizes .size-logo img {
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+#logo-sizes .size-logo.sign img {
+  max-width: 180px;
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — карточки с фото */
+
+#logo-misuse .misuse-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+#logo-misuse .misuse-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#logo-misuse .misuse-preview {
+  width: 100%;
+  height: 180px;
+  min-height: 180px;
+  padding: 18px;
+  border-radius: 28px;
+  background: #F7F8FC;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+#logo-misuse .misuse-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#logo-misuse .misuse-item p {
+  min-height: 56px;
+}
+
+[data-theme="dark"] #logo-misuse .misuse-preview {
+  background: #292F72;
+}
+
+@media (max-width: 1200px) {
+  #logo-misuse .misuse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  #logo-misuse .misuse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #logo-misuse .misuse-preview {
+    height: 220px;
+    min-height: 220px;
+  }
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — компактнее карточки, крупнее фото */
+
+#logo-misuse .misuse-item {
+  padding: 18px;
+  gap: 12px;
+}
+
+#logo-misuse .misuse-preview {
+  height: 155px;
+  min-height: 155px;
+  padding: 6px;
+}
+
+#logo-misuse .misuse-preview img {
+  width: 112%;
+  height: 112%;
+  max-width: none;
+  object-fit: contain;
+}
+
+#logo-misuse .misuse-item p {
+  min-height: 44px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — фото без обрезки */
+
+#logo-misuse .misuse-preview {
+  height: 165px;
+  min-height: 165px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+#logo-misuse .misuse-preview img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — вертикальные изображения */
+
+#logo-misuse .misuse-item {
+  padding: 16px;
+}
+
+#logo-misuse .misuse-preview {
+  height: 230px;
+  min-height: 230px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+#logo-misuse .misuse-preview img {
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — финальная сетка и фото без обрезки */
+
+#logo-misuse .misuse-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+#logo-misuse .misuse-item {
+  padding: 16px !important;
+  border-radius: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+#logo-misuse .misuse-preview {
+  width: 100% !important;
+  height: 210px !important;
+  min-height: 210px !important;
+  padding: 10px !important;
+  border-radius: 20px !important;
+  background: #F7F8FC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#logo-misuse .misuse-preview img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+#logo-misuse .misuse-item p {
+  min-height: 44px !important;
+  font-size: 15px !important;
+  line-height: 1.35 !important;
+}
+
+[data-theme="dark"] #logo-misuse .misuse-preview {
+  background: #292F72 !important;
+}
+
+@media (max-width: 1200px) {
+  #logo-misuse .misuse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  #logo-misuse .misuse-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #logo-misuse .misuse-preview {
+    height: 240px !important;
+    min-height: 240px !important;
+  }
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — знак ошибки поверх фото */
+
+#logo-misuse .misuse-preview {
+  position: relative !important;
+}
+
+#logo-misuse .misuse-preview::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  background-image: url("../assets/images/misuse-cross.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 
-  cursor: pointer;
+  pointer-events: none;
 }
 
-/* скрываем старые полоски, если span остались в HTML */
-.burger span {
-  display: none !important;
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — меньше высота карточек */
+
+#logo-misuse .misuse-item {
+  padding: 14px !important;
+  gap: 10px !important;
 }
 
-/* тёмная тема */
-[data-theme="dark"] .burger {
-  background-image: url("../assets/images/burger-dark.svg");
+#logo-misuse .misuse-preview {
+  height: 175px !important;
+  min-height: 175px !important;
+  padding: 8px !important;
 }
 
-/* показываем только на мобильной версии */
-@media (max-width: 820px) {
-  .burger {
-    display: block !important;
-  }
+#logo-misuse .misuse-item p {
+  min-height: 34px !important;
+  font-size: 14px !important;
+  line-height: 1.3 !important;
 }
 
-/* КНОПКА НАВЕРХ — В СТИЛЕ ПЛАШЕК КОНЦЕПЦИИ */
+/* ФИРМЕННЫЕ ЦВЕТА — компактнее только карточки палитры */
 
-.scroll-top {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 900;
-
-  width: 66px;
-  height: 66px;
-
-  border: 0;
-  border-radius: 20px;
-  background-color: #4A509A;
-  background-image: url("../assets/images/arrow-up.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px 24px;
-
-  color: transparent;
-  font-size: 0;
-  line-height: 0;
-
-  cursor: pointer;
-  box-shadow: none;
-  display: none;
-
-  transition: 0.24s ease;
+section#colors .color-palette-card {
+  gap: 18px !important;
 }
 
-.scroll-top.is-visible {
-  display: block;
+section#colors .color-swatch-card {
+  height: 350px !important;
+  min-height: 350px !important;
+  padding-top: 130px !important;
 }
 
-.scroll-top:hover {
-  transform: translateY(-3px);
+section#colors .color-swatch-card .swatch-color {
+  height: 130px !important;
+  min-height: 130px !important;
 }
 
-/* тёмная тема — оставляем как в концепции */
-[data-theme="dark"] .scroll-top {
-  background-color: #4A509A;
+section#colors .color-swatch-card .swatch-info {
+  height: 220px !important;
+  min-height: 220px !important;
+  padding: 18px !important;
 }
 
-/* мобильная версия */
-@media (max-width: 820px) {
-  .scroll-top {
-    right: 18px;
-    bottom: 18px;
-
-    width: 58px;
-    height: 58px;
-    border-radius: 18px;
-    background-size: 22px 22px;
-  }
+section#colors .color-swatch-card .swatch-info small {
+  font-size: 13px !important;
+  line-height: 1.35 !important;
 }
 
-/* БОКОВОЕ МЕНЮ — звёздочка вместо вертикальной полоски */
-
-.toc a::before {
-  content: "✦";
-  position: absolute;
-  left: 4px;
-  top: 50%;
-
-  width: auto;
-  height: auto;
-
-  border-radius: 0;
-  background: none;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  line-height: 1;
-  color: #4A509A;
-
-  opacity: 0;
-  transform: translateY(-50%) scale(0.7);
-  transition: 0.22s ease;
+section#colors .color-swatch-card .swatch-info em {
+  min-height: 40px !important;
 }
 
-.toc a:hover::before,
-.toc a.active::before {
-  height: auto;
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
+/* ГРАФИКА И ФОТОСТИЛЬ — уменьшение высоты карточки */
+
+#graphics {
+  gap: 20px !important;
 }
 
-/* чтобы текст не налезал на звёздочку */
-.toc a {
-  padding-left: 24px;
+#graphics .section-head {
+  gap: 10px !important;
 }
 
-/* тёмная тема */
-[data-theme="dark"] .toc a::before {
-  background: none;
-  color: #F7F8FC;
+#graphics .section-head p:not(.eyebrow) {
+  line-height: 1.35 !important;
 }
 
-/* ВОЗВРАЩАЕМ ЭФФЕКТ НАКЛАДЫВАЮЩИХСЯ СТРАНИЦ НА DESKTOP */
-
-@media (min-width: 821px) {
-  html,
-  body {
-    overflow-x: visible;
-  }
-
-  main {
-    overflow: visible !important;
-  }
-
-  main > .screen:not(#gallery):not(#contacts) {
-    position: sticky !important;
-    top: 0 !important;
-    overflow: visible !important;
-  }
-
-  main > #meaning,
-  main > #graphics {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    justify-content: flex-start;
-  }
-
-  main > #gallery,
-  main > #contacts {
-    position: relative !important;
-    top: auto !important;
-    overflow: visible !important;
-  }
+#graphics .graphics-showcase-card {
+  padding: 22px !important;
+  gap: 16px !important;
 }
 
-/* А ВОТ ФИКС ВЫЕЗДА ВПРАВО ОСТАВЛЯЕМ ТОЛЬКО НА МОБИЛЬНОЙ */
-
-@media (max-width: 820px) {
-  html,
-  body,
-  main,
-  .screen {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+#graphics .graphics-switcher {
+  gap: 10px !important;
 }
 
-/* ОБЛОЖКА — маскот впритык к правому краю */
-
-#cover .hero-mascot-wrap {
-  justify-content: flex-end;
-  margin-right: -160px;
+#graphics .graphics-mode {
+  min-height: 46px !important;
+  padding: 0 22px !important;
+  font-size: 15px !important;
 }
 
-#cover .hero-mascot {
-  width: 608px;
-  max-width: none;
+#graphics .graphics-card-main {
+  gap: 24px !important;
 }
 
-/* планшет */
-@media (max-width: 1200px) {
-  #cover .hero-mascot-wrap {
-    justify-content: flex-end;
-    margin-right: -80px;
-    transform: translateY(60px);
-  }
-
-  #cover .hero-mascot {
-    width: min(80vw, 520px);
-    max-width: none;
-  }
+#graphics .graphics-image-box {
+  min-height: 330px !important;
+  height: 330px !important;
+  padding: 20px !important;
 }
 
-/* мобильная версия */
-@media (max-width: 820px) {
-  #cover .hero-mascot-wrap {
-    width: calc(100% + 22px);
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin: 28px -34px 0 0;
-    transform: translateY(30px);
-  }
-
-  #cover .hero-mascot {
-    width: min(78vw, 320px);
-    max-width: none;
-    height: auto;
-  }
+#graphics .graphics-image-box img {
+  max-height: 290px !important;
+  width: 100% !important;
+  object-fit: contain !important;
 }
 
-/* ОБЛОЖКА — МАСКОТ ВПРИТЫК СПРАВА НА МОБИЛЬНОЙ */
-
-@media (max-width: 820px) {
-  #cover.hero {
-    min-height: 100svh !important;
-  }
-
-  #cover .hero-mascot-wrap {
-    right: -2px !important;
-    bottom: -36px !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  #cover .hero-mascot {
-    width: min(82vw, 340px) !important;
-    max-width: none !important;
-  }
+#graphics .graphics-content {
+  gap: 12px !important;
 }
 
-/* ОБЛОЖКА — МАСКОТ СПРАВА ТОЛЬКО В МОБИЛЬНОЙ ВЕРСИИ */
-
-@media (max-width: 820px) {
-  #cover.hero {
-    position: relative;
-    overflow: hidden;
-  }
-
-  #cover .hero-inner {
-    position: relative;
-    z-index: 2;
-  }
-
-  #cover .hero-mascot-wrap {
-    position: relative !important;
-
-    width: calc(100vw - 44px) !important;
-    max-width: none !important;
-
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: flex-end !important;
-
-    margin: 26px 0 0 0 !important;
-    transform: translateX(22px) translateY(-30px) !important;
-  }
-
-  #cover .hero-mascot {
-    width: min(82vw, 340px) !important;
-    max-width: none !important;
-    height: auto !important;
-  }
+#graphics .graphics-content h3 {
+  margin-bottom: 8px !important;
 }
 
-/* ФИКС ПЕРЕХОДОВ ПО БОКОВОМУ МЕНЮ */
-
-body.nav-jump main > .screen,
-body.nav-jump main > #meaning,
-body.nav-jump main > #graphics,
-body.nav-jump main > #gallery,
-body.nav-jump main > #contacts {
-  position: relative !important;
-  top: auto !important;
-  height: auto !important;
-  min-height: 100vh;
-  overflow: visible !important;
-  z-index: auto !important;
+#graphics .graphics-content p {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
 }
 
-body.nav-jump main > .hero {
+#graphics .graphics-pagination {
+  min-height: 28px !important;
+  padding-top: 4px !important;
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — фото во всю высоту плашки */
+
+#graphics .graphics-image-box {
+  height: 360px !important;
+  min-height: 360px !important;
+  max-height: 360px !important;
+  padding: 24px !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#graphics .graphics-image-box img,
+#graphics .graphics-image-box img#graphicsImage {
+  height: 100% !important;
+  width: auto !important;
+
+  max-height: 100% !important;
+  max-width: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — окно под формат фото, слева */
+
+#graphics .graphics-card-main {
+  display: grid !important;
+  grid-template-columns: 520px minmax(420px, 1fr) !important;
+  gap: 32px !important;
+  align-items: start !important;
+}
+
+#graphics .graphics-preview {
+  width: 520px !important;
+  max-width: 520px !important;
+  justify-self: start !important;
+}
+
+#graphics .graphics-image-box {
+  width: 520px !important;
+  height: 520px !important;
+  min-height: 520px !important;
+  max-height: 520px !important;
+
+  padding: 24px !important;
+  border-radius: 28px !important;
+  background: #F7F8FC !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
   overflow: hidden !important;
 }
 
-/* ЖЁСТКИЙ ФИКС БОКОВОГО МЕНЮ ПРИ STICKY-ЭФФЕКТЕ */
+#graphics .graphics-image-box img,
+#graphics .graphics-image-box img#graphicsImage {
+  width: 100% !important;
+  height: 100% !important;
 
-@media (min-width: 821px) {
-  body.nav-jump main > .screen:not(#gallery):not(#contacts),
-  body.nav-jump main > #meaning,
-  body.nav-jump main > #graphics,
-  body.nav-jump main > #gallery,
-  body.nav-jump main > #contacts {
-    position: relative !important;
-    top: auto !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow: visible !important;
-    z-index: auto !important;
-  }
+  max-width: 100% !important;
+  max-height: 100% !important;
 
-  body.nav-jump main > #cover.hero {
-    overflow: hidden !important;
-  }
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
-/* ПОСТРОЕНИЕ — более резкое переключение изображения */
-
-#logo-construction .construction-single-image img {
-  transition: opacity 0.08s linear !important;
+#graphics .graphics-content {
+  justify-self: start !important;
+  align-self: start !important;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  text-align: left !important;
 }
 
-/* ПОСТРОЕНИЕ — белый фон только у обычного вида иконки */
+#graphics .graphics-content h3,
+#graphics .graphics-content p {
+  text-align: left !important;
+}
 
-#logo-construction .construction-single-image.is-icon-default {
-  background: #FFFFFF !important;
+/* адаптив */
+@media (max-width: 1200px) {
+  #graphics .graphics-card-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  #graphics .graphics-preview,
+  #graphics .graphics-image-box {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #graphics .graphics-image-box {
+    height: 440px !important;
+    min-height: 440px !important;
+    max-height: 440px !important;
+  }
 }
 
 @media (max-width: 820px) {
-  .logo-main-image img,
-  .construction-single-image img,
-  .clearspace-single-image img,
-  .color-version-image img {
-    width: 120%;
-    max-width: none;
+  #graphics .graphics-image-box {
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 320px !important;
   }
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — уменьшаем высоту карточки */
+
+#graphics .graphics-showcase-card {
+  padding: 24px !important;
+  gap: 18px !important;
+}
+
+#graphics .graphics-card-main {
+  grid-template-columns: 460px minmax(420px, 1fr) !important;
+  gap: 28px !important;
+}
+
+#graphics .graphics-preview {
+  width: 460px !important;
+  max-width: 460px !important;
+}
+
+#graphics .graphics-image-box {
+  width: 460px !important;
+  height: 420px !important;
+  min-height: 420px !important;
+  max-height: 420px !important;
+  padding: 18px !important;
+}
+
+#graphics .graphics-image-box img,
+#graphics .graphics-image-box img#graphicsImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+#graphics .graphics-content h3 {
+  margin-bottom: 12px !important;
+}
+
+#graphics .graphics-content {
+  gap: 12px !important;
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — кнопки фирменного цвета */
+
+#graphics .graphics-color-switcher {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 72px);
+  gap: 12px;
+}
+
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+#graphics .graphics-color-option {
+  width: 72px;
+  height: 42px;
+  border: 2px solid var(--graphics-c);
+  border-radius: 999px;
+  background: var(--graphics-c);
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+#graphics .graphics-color-option:hover {
+  transform: translateY(-2px);
+}
+
+#graphics .graphics-color-option.is-active {
+  outline: 3px solid #4A509A;
+  outline-offset: 3px;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"] {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 0;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"].is-active {
+  outline: 3px solid #4A509A;
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] #graphics .graphics-color-option.is-active {
+  outline-color: #F7F8FC;
+}
+
+@media (max-width: 820px) {
+  #graphics .graphics-color-switcher {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #graphics .graphics-color-option {
+    width: 100%;
+  }
+}
+
+/* ФИНАЛЬНЫЙ ФИКС — ГРАФИКА И ФОТОСТИЛЬ */
+
+#graphics {
+  justify-content: flex-start !important;
+  gap: 20px !important;
+  overflow-y: auto !important;
+}
+
+#graphics .graphics-showcase-card {
+  padding: 22px !important;
+  gap: 16px !important;
+  border-radius: 32px !important;
+  background: #ECE8FF !important;
+}
+
+#graphics .graphics-switcher {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+#graphics .graphics-mode {
+  min-height: 48px !important;
+  padding: 0 24px !important;
+  border: 2px solid #4A509A !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: #4A509A !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+#graphics .graphics-mode.is-active {
+  background: #4A509A !important;
+  color: #F7F8FC !important;
+}
+
+#graphics .graphics-color-switcher {
+  width: fit-content !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 72px) !important;
+  gap: 12px !important;
+}
+
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+#graphics .graphics-color-option {
+  width: 72px !important;
+  height: 42px !important;
+  border: 2px solid var(--graphics-c) !important;
+  border-radius: 999px !important;
+  background: var(--graphics-c) !important;
+  cursor: pointer !important;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"] {
+  border-color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.12) !important;
+}
+
+#graphics .graphics-color-option.is-active {
+  outline: 3px solid #4A509A !important;
+  outline-offset: 3px !important;
+}
+
+#graphics .graphics-card-main {
+  display: grid !important;
+  grid-template-columns: 460px minmax(360px, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+#graphics .graphics-preview {
+  width: 460px !important;
+  max-width: 460px !important;
+  display: grid !important;
+  gap: 12px !important;
+}
+
+#graphics .graphics-image-box {
+  width: 460px !important;
+  height: 400px !important;
+  min-height: 400px !important;
+  max-height: 400px !important;
+  padding: 18px !important;
+  border-radius: 28px !important;
+  background: #F7F8FC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#graphics .graphics-image-box img,
+#graphics .graphics-image-box img#graphicsImage {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+#graphics .graphics-content {
+  display: grid !important;
+  align-content: start !important;
+  gap: 12px !important;
+  padding-top: 0 !important;
+  text-align: left !important;
+}
+
+#graphics .graphics-content h3 {
+  margin: 0 0 8px !important;
+  color: #4A509A !important;
+}
+
+#graphics .graphics-content p {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  text-align: left !important;
+}
+
+#graphics .graphics-pagination {
+  min-height: 28px !important;
+  padding-top: 4px !important;
+}
+
+[data-theme="dark"] #graphics .graphics-showcase-card {
+  background: #7A8BD5 !important;
+}
+
+[data-theme="dark"] #graphics .graphics-mode {
+  border-color: #F7F8FC !important;
+  color: #F7F8FC !important;
+}
+
+[data-theme="dark"] #graphics .graphics-mode.is-active {
+  background: #F7F8FC !important;
+  color: #292F72 !important;
+}
+
+[data-theme="dark"] #graphics .graphics-color-option.is-active {
+  outline-color: #F7F8FC !important;
+}
+
+[data-theme="dark"] #graphics .graphics-content h3,
+[data-theme="dark"] #graphics .graphics-content p {
+  color: #F7F8FC !important;
+}
+
+@media (max-width: 1200px) {
+  #graphics .graphics-card-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  #graphics .graphics-preview,
+  #graphics .graphics-image-box {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #graphics .graphics-image-box {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  #graphics .graphics-switcher {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  #graphics .graphics-mode {
+    width: 100% !important;
+  }
+
+  #graphics .graphics-color-switcher {
+    width: 100% !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  #graphics .graphics-color-option {
+    width: 100% !important;
+  }
+
+  #graphics .graphics-image-box {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — кнопки цвета внизу текстового блока */
+
+#graphics .graphics-card-main {
+  align-items: stretch !important;
+}
+
+#graphics .graphics-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  min-height: 400px !important;
+}
+
+#graphics .graphics-color-switcher {
+  margin-top: auto !important;
+  padding-top: 22px !important;
+
+  width: fit-content !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 72px) !important;
+  gap: 12px !important;
+}
+
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+#graphics .graphics-color-option {
+  width: 72px !important;
+  height: 42px !important;
+  border: 2px solid var(--graphics-c) !important;
+  border-radius: 999px !important;
+  background: var(--graphics-c) !important;
+  cursor: pointer !important;
+  transition: 0.24s ease !important;
+}
+
+#graphics .graphics-color-option:hover {
+  transform: translateY(-2px) !important;
+}
+
+#graphics .graphics-color-option.is-active {
+  outline: 3px solid #4A509A !important;
+  outline-offset: 3px !important;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"] {
+  border-color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.12) !important;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"].is-active {
+  outline: 3px solid #4A509A !important;
+  outline-offset: 3px !important;
+}
+
+[data-theme="dark"] #graphics .graphics-color-option.is-active {
+  outline-color: #F7F8FC !important;
+}
+
+@media (max-width: 820px) {
+  #graphics .graphics-content {
+    min-height: auto !important;
+  }
+
+  #graphics .graphics-color-switcher {
+    width: 100% !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  #graphics .graphics-color-option {
+    width: 100% !important;
+  }
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — кнопки цвета как в цветовых версиях */
+
+#graphics .graphics-card-main {
+  align-items: stretch !important;
+}
+
+#graphics .graphics-image-box {
+  height: 400px !important;
+  min-height: 400px !important;
+  max-height: 400px !important;
+}
+
+#graphics .graphics-content {
+  height: 400px !important;
+  min-height: 400px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+#graphics .graphics-color-switcher {
+  margin-top: auto !important;
+
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+#graphics .graphics-color-option {
+  width: 100% !important;
+  min-height: 54px !important;
+  height: 54px !important;
+
+  padding: 0 !important;
+  border-radius: 999px !important;
+
+  background: var(--graphics-c) !important;
+  border: 2px solid var(--graphics-c) !important;
+
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: 0.24s ease !important;
+}
+
+#graphics .graphics-color-option:hover {
+  transform: translateY(-3px) !important;
+}
+
+#graphics .graphics-color-option.is-active {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 3px !important;
+}
+
+/* чтобы светлые кнопки были видны */
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"],
+#graphics .graphics-color-option[data-graphics-color="#F7F8FC"] {
+  border-color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.12) !important;
+}
+
+[data-theme="dark"] #graphics .graphics-color-option.is-active {
+  outline-color: #FFFFFF !important;
+}
+
+@media (max-width: 1200px) {
+  #graphics .graphics-content {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  #graphics .graphics-color-switcher {
+    margin-top: 22px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  #graphics .graphics-color-switcher {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  #graphics .graphics-color-option {
+    min-height: 48px !important;
+    height: 48px !important;
+  }
+}
+
+#graphics .graphics-content {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-self: stretch !important;
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  text-align: left !important;
+  min-height: 420px !important;
+}
+
+#graphics .graphics-content h3,
+#graphics .graphics-content p {
+  text-align: left !important;
+}
+
+#graphics .graphics-color-switcher {
+  margin-top: auto !important;
+  align-self: flex-start !important;
+}
+
+#graphics .graphics-color-switcher {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+#graphics .graphics-color-option {
+  justify-content: center;
+  min-height: 54px !important;
+  height: 54px !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  cursor: pointer;
+  transition: 0.24s ease;
+  background: var(--graphics-c) !important;
+  border: 2px solid var(--graphics-c) !important;
+  box-shadow: none !important;
+}
+
+#graphics .graphics-color-option:hover {
+  transform: translateY(-3px);
+}
+
+#graphics .graphics-color-option.is-active {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 3px !important;
+}
+
+#graphics .graphics-color-option[data-graphics-color="#ECE8FF"] {
+  box-shadow: inset 0 0 0 1px rgba(74, 80, 154, 0.12) !important;
+}
+
+[data-theme="dark"] #graphics .graphics-color-option.is-active {
+  outline-color: #F7F8FC !important;
+}
+
+
+/* ГРАФИКА И ФОТОСТИЛЬ — текст всегда сверху */
+
+#graphics .graphics-card-main {
+  align-items: start !important;
+}
+
+#graphics .graphics-content {
+  align-self: start !important;
+  justify-self: start !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+#graphics .graphics-content h3 {
+  margin: 0 0 12px !important;
+}
+
+#graphics .graphics-content p {
+  margin: 0 !important;
+}
+
+#graphics .graphics-color-switcher {
+  margin-top: 24px !important;
+  transform: translateY(-28px) !important;
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — фикс выравнивания текста и кнопок */
+
+#graphics .graphics-card-main {
+  align-items: stretch !important;
+}
+
+/* левая колонка с фото */
+#graphics .graphics-preview {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* правая колонка с текстом */
+#graphics .graphics-content {
+  height: 420px !important;
+  min-height: 420px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* заголовок и текст всегда сверху */
+#graphics .graphics-content h3,
+#graphics .graphics-content p {
+  margin-top: 0 !important;
+}
+
+/* кнопки цвета прижимаем вниз только там, где они видимы */
+#graphics .graphics-color-switcher {
+  margin-top: auto !important;
+  align-self: flex-start !important;
+}
+
+/* если кнопки скрыты — они вообще не занимают место */
+#graphics .graphics-color-switcher[hidden] {
+  display: none !important;
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — увеличиваем отступы сверху */
+
+#graphics {
+  gap: 34px !important;
+}
+
+#graphics .section-head {
+  gap: 18px !important;
+  margin-bottom: 8px !important;
+}
+
+#graphics .graphics-showcase-card {
+  margin-top: 6px !important;
+}
+
+/* ТЁМНАЯ ТЕМА — плашки под фото остаются как в светлой теме */
+
+[data-theme="dark"] .logo-main-image,
+[data-theme="dark"] .construction-single-image,
+[data-theme="dark"] .clearspace-single-image,
+[data-theme="dark"] .color-version-image,
+[data-theme="dark"] .size-logo,
+[data-theme="dark"] .misuse-preview,
+[data-theme="dark"] #graphics .graphics-image-box,
+[data-theme="dark"] .uikit-typography-images img,
+[data-theme="dark"] .uikit-grid-image-card img,
+[data-theme="dark"] #ui-buttons .uikit-buttons-image,
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-image,
+[data-theme="dark"] .uikit-photo-card-image,
+[data-theme="dark"] #ui-tabs-checkboxes .uikit-photo-card-image {
+  background: #F7F8FC;
+}
+
+/* UI KIT — белые плашки под скриншоты остаются белыми */
+
+[data-theme="dark"] .uikit-typography-images img,
+[data-theme="dark"] .uikit-grid-image-card img,
+[data-theme="dark"] #ui-buttons .uikit-buttons-image,
+[data-theme="dark"] #ui-dropdowns .uikit-dropdowns-image,
+[data-theme="dark"] .uikit-photo-card-image,
+[data-theme="dark"] #ui-tabs-checkboxes .uikit-photo-card-image {
+  background: #FFFFFF;
+}
+
+/* ЗАПРЕЩЁННЫЕ МОДИФИКАЦИИ — плашки под фото не меняются в тёмной теме */
+
+[data-theme="dark"] #logo-misuse .misuse-preview {
+  background: #F7F8FC !important;
+}
+
+@media (max-width: 820px) {
+  #cover .hero-mascot-wrap {
+    transform: translateX(22px) translateY(20px) !important;
+  }
+}
+
+/* ФИНАЛЬНЫЙ ФИКС: графика и фотостиль на мобильной версии */
+
+@media (max-width: 820px) {
+  #graphics .graphics-card-main {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 18px !important;
+  }
+
+  #graphics .graphics-preview,
+  #graphics .graphics-image-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #graphics .graphics-image-box {
+    height: min(70vw, 320px) !important;
+    min-height: min(70vw, 320px) !important;
+    max-height: 320px !important;
+    padding: 14px !important;
+    overflow: hidden !important;
+  }
+
+  #graphics .graphics-image-box img,
+  #graphics .graphics-image-box img#graphicsImage {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  #graphics .graphics-pagination {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+  }
+
+  #graphics .graphics-runner {
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+}
+
+/* ГРАФИКА И ФОТОСТИЛЬ — мягко уменьшаем карточку на мобильной */
+
+@media (max-width: 820px) {
+  #graphics .graphics-showcase-card.is-short-mobile-graphics-card {
+    padding-bottom: 18px !important;
+  }
+
+  #graphics .graphics-showcase-card.is-short-mobile-graphics-card .graphics-card-main {
+    gap: 16px !important;
+  }
+
+  #graphics .graphics-showcase-card.is-short-mobile-graphics-card .graphics-content {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 10px !important;
+    align-content: start !important;
+  }
+
+  #graphics .graphics-showcase-card.is-short-mobile-graphics-card .graphics-content h3 {
+    margin: 0 0 12px !important;
+  }
+
+  #graphics .graphics-showcase-card.is-short-mobile-graphics-card .graphics-content p {
+    margin: 0 !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Просмотр всех фото в карточках полностью на мобильной версии */
+
+@media (max-width: 820px) {
+  .logo-main-card img,
+  .construction-single-card img,
+  .clearspace-single-card img,
+  .color-version-card img,
+  #logo-sizes .size-scale img,
+  #logo-misuse .misuse-item img,
+  #graphics .graphics-image-box img,
+  .uikit-typography-image-card img,
+  .uikit-grid-image-card img,
+  .uikit-buttons-showcase img,
+  .uikit-dropdowns-showcase img,
+  .uikit-photo-card img {
+    cursor: zoom-in;
+  }
+
+  .image-modal {
+    padding: 16px !important;
+  }
+
+  .image-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 86vh;
+    padding: 48px 12px 12px;
+    border-radius: 24px;
+    background: #F7F8FC;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .image-modal-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    cursor: default;
+  }
+
+  .image-modal-card .close {
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+}
+
+[data-theme="dark"] .image-modal-card {
+  background: #292F72;
+}
+
+/* НОСИТЕЛИ БРЕНДА — правила оформления носителей */
+
+#carriers {
+  background: #F7F8FC;
+}
+
+#carriers .section-head {
+  max-width: 1120px;
+}
+
+.carrier-rules-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  padding: 34px;
+  border-radius: 32px;
+  background: #ECE8FF;
+  box-shadow: none;
+}
+
+.carrier-rule-column {
+  padding: 28px;
+  border-radius: 28px;
+  background: #F7F8FC;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.carrier-rule-column h3 {
+  color: #4A509A;
+}
+
+.carrier-rule-column p {
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--text-card-size);
+  font-weight: var(--text-card-weight);
+  line-height: var(--text-card-line);
+  color: var(--text-card-color);
+}
+
+.carrier-examples {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(74, 80, 154, 0.16);
+}
+
+[data-theme="dark"] #carriers {
+  background: #292F72;
+}
+
+[data-theme="dark"] #carriers .eyebrow,
+[data-theme="dark"] #carriers h2,
+[data-theme="dark"] #carriers .section-head p {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] .carrier-rules-card {
+  background: #7A8BD5;
+}
+
+[data-theme="dark"] .carrier-rule-column {
+  background: #292F72;
+}
+
+[data-theme="dark"] .carrier-rule-column h3,
+[data-theme="dark"] .carrier-rule-column p {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] .carrier-examples {
+  border-top-color: rgba(247, 248, 252, 0.24);
+}
+
+@media (max-width: 820px) {
+  .carrier-rules-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 18px;
+    border-radius: 26px;
+  }
+
+  .carrier-rule-column {
+    padding: 22px;
+    border-radius: 22px;
+    gap: 14px;
+  }
+}
+
+/* ГАЛЕРЕЯ МАКЕТОВ */
+
+#gallery {
+  background: #F7F8FC;
+  gap: 26px !important;
+}
+
+#gallery .section-head {
+  gap: 12px !important;
+}
+
+.gallery-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+#gallery .carrier-counter {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4A509A;
+}
+
+#gallery .gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.gallery-arrow-button {
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background-color: #4A509A;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+.gallery-arrow-button:hover {
+  transform: translateY(-3px);
+}
+
+.gallery-arrow-prev {
+  background-image: url("../assets/images/gallery-arrow-left.svg");
+}
+
+.gallery-arrow-next {
+  background-image: url("../assets/images/gallery-arrow-right.svg");
+}
+
+#gallery .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#gallery .gallery-card {
+  min-height: 0 !important;
+  padding: 16px !important;
+  border-radius: 26px !important;
+  background: #ECE8FF !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 12px !important;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+#gallery .gallery-card:hover {
+  transform: translateY(-6px);
+}
+
+.gallery-card-image {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border-radius: 22px;
+  background: #F7F8FC;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.gallery-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#gallery .gallery-card h3 {
+  min-height: 44px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #4A509A;
+}
+
+/* Модалка галереи */
+
+.gallery-modal-card {
+  width: min(1180px, 96vw) !important;
+  max-height: 92vh;
+  overflow: hidden;
+}
+
+.gallery-modal-content {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(420px, 1.25fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.gallery-modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 6px;
+}
+
+.gallery-modal-text .eyebrow {
+  font-size: 18px;
+}
+
+.gallery-modal-text h2 {
+  font-size: clamp(42px, 4vw, 68px);
+}
+
+.gallery-modal-text p:not(.eyebrow) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-card-color);
+}
+
+.gallery-toggle-view {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.gallery-modal-image {
+  min-height: 520px;
+  padding: 22px;
+  border-radius: 28px;
+  background: #F7F8FC;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.gallery-modal-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+}
+
+/* Тёмная тема */
+
+[data-theme="dark"] #gallery {
+  background: #292F72;
+}
+
+[data-theme="dark"] #gallery .eyebrow,
+[data-theme="dark"] #gallery h2,
+[data-theme="dark"] #gallery .section-head p,
+[data-theme="dark"] #gallery .carrier-counter {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] #gallery .gallery-card {
+  background: #7A8BD5 !important;
+}
+
+[data-theme="dark"] .gallery-card-image,
+[data-theme="dark"] .gallery-modal-image {
+  background: #F7F8FC;
+}
+
+[data-theme="dark"] #gallery .gallery-card h3 {
+  color: #F7F8FC;
+}
+
+[data-theme="dark"] .gallery-modal-text h2,
+[data-theme="dark"] .gallery-modal-text p,
+[data-theme="dark"] .gallery-modal-text .eyebrow {
+  color: #F7F8FC;
+}
+
+/* Адаптив */
+
+@media (max-width: 1200px) {
+  #gallery .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-card-image {
+    height: 280px;
+  }
+
+  .gallery-modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-modal-image {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 820px) {
+  .gallery-top-row {
+    justify-content: space-between;
+  }
+
+  #gallery .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card-image {
+    height: 300px;
+  }
+
+  .gallery-arrow-button {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+  }
+
+  .gallery-modal-card {
+    width: 94vw !important;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px !important;
+  }
+
+  .gallery-modal-content {
+    gap: 18px;
+  }
+
+  .gallery-modal-image {
+    min-height: 320px;
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .gallery-toggle-view {
+    width: 100%;
+  }
+}
+
+/* ГАЛЕРЕЯ — фото носителей лучше для вертикальных макетов */
+
+#gallery .gallery-card {
+  padding: 14px !important;
+  gap: 12px !important;
+}
+
+#gallery .gallery-card-image {
+  width: 100% !important;
+  height: 270px !important;
+  padding: 8px !important;
+  border-radius: 22px !important;
+  background: #F7F8FC !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+}
+
+#gallery .gallery-card-image img {
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+#gallery .gallery-card h3 {
+  min-height: 40px !important;
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+}
+
+/* чтобы карточки всё ещё нормально влезали 2 ряда по 4 */
+
+#gallery .gallery {
+  gap: 16px !important;
+}
+
+@media (max-width: 1200px) {
+  #gallery .gallery-card-image {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  #gallery .gallery-card-image {
+    height: 340px !important;
+  }
+}
+
+/* ГАЛЕРЕЯ — фото без внутренней плашки, в размер области */
+
+#gallery .gallery-card-image {
+  width: 100% !important;
+  height: 270px !important;
+  padding: 0 !important;
+  border-radius: 22px !important;
+  background: transparent !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+#gallery .gallery-card-image img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  border-radius: 22px !important;
+}
+
+/* Набор открыток — опустить фото ниже внутри карточки */
+#gallery .gallery-card[data-gallery-index="3"] .gallery-card-image img {
+  object-position: center 0% !important;
+}
+
+
+/* Модалка — переключатель вариантов футболки */
+
+.gallery-variant-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 120px));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.gallery-variant-switcher[hidden] {
+  display: none !important;
+}
+
+.gallery-variant-button {
+  height: 46px;
+  border: 2px solid var(--variant-c);
+  border-radius: 999px;
+  background: var(--variant-c);
+  color: #4A509A;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+.gallery-variant-button:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-variant-button.is-active {
+  outline: 3px solid #4A509A;
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] .gallery-variant-button.is-active {
+  outline-color: #F7F8FC;
+}
+
+@media (max-width: 820px) {
+  .gallery-variant-switcher {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ГАЛЕРЕЯ — жирнее подписи в карточках */
+
+#gallery .gallery-card h3 {
+  font-weight: 700 !important;
+}
+
+#galleryModalText {
+  white-space: pre-line;
+}
+
+/* ГАЛЕРЕЯ — внутренний скролл для длинного описания в модалке */
+
+#galleryModalText {
+  white-space: pre-line;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+#galleryModalText::-webkit-scrollbar {
+  width: 6px;
+}
+
+#galleryModalText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#galleryModalText::-webkit-scrollbar-thumb {
+  background: #4A509A;
+  border-radius: 999px;
+}
+
+[data-theme="dark"] #galleryModalText::-webkit-scrollbar-thumb {
+  background: #F7F8FC;
+}
+
+@media (max-width: 820px) {
+  #galleryModalText {
+    max-height: 220px;
+  }
+}
+
+/* КОНТАКТЫ — обычный текст без плашки */
+
+.contacts-info-card {
+  all: unset !important;
+}
+
+.contacts-info-text {
+  display: grid;
+  gap: 10px;
+  margin: 34px 0 0;
+  max-width: 900px;
+}
+
+.contacts-info-text p {
+  margin: 0 !important;
+  max-width: 900px;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: var(--text-card-size) !important;
+  font-weight: var(--text-card-weight) !important;
+  line-height: var(--text-card-line) !important;
+  color: #4A509A !important;
+}
+
+.contacts-info-text strong {
+  font-weight: 700;
+  color: #4A509A;
+}
+
+[data-theme="dark"] .contacts-info-text p,
+[data-theme="dark"] .contacts-info-text strong {
+  color: #F7F8FC !important;
 }
