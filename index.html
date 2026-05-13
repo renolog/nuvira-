@@ -44,24 +44,68 @@
   <a href="#meaning">Tone of voice</a>
 </div>
 
-      <div class="toc-group">
-        <p class="toc-group-title">Визуальная система</p>
-        <a href="#visual">Основные элементы</a>
-        <a href="#logo">Логотип</a>
-        <a href="#logo-construction">Построение</a>
-        <a href="#logo-clearspace">Охранное поле</a>
-        <a href="#logo-colors">Цветовые версии</a>
-        <a href="#logo-sizes">Минимальные размеры</a>
-        <a href="#logo-misuse">Ошибки использования</a>
-        <a href="#colors">Цветовая палитра</a>
-        <a href="#typography">Типографика</a>
-        <a href="#graphics">Графика и фотостиль</a>
-        <a href="#uikit">UI Kit</a>
-      </div>
+<div class="toc-group">
+  <p class="toc-group-title">Визуальная система</p>
+
+  <a href="#visual">Основные элементы</a>
+
+  <div class="toc-dropdown">
+    <div class="toc-dropdown-row">
+      <a href="#logo" class="toc-dropdown-link">Логотип</a>
+
+      <button
+        class="toc-dropdown-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Раскрыть раздел Логотип"
+      >
+        <span></span>
+      </button>
+    </div>
+
+    <div class="toc-submenu" hidden>
+      <a href="#logo-construction">Построение</a>
+      <a href="#logo-clearspace">Охранное поле</a>
+      <a href="#logo-colors">Цветовые версии</a>
+      <a href="#logo-sizes">Минимальные размеры</a>
+      <a href="#logo-misuse">Запрещенные модификации</a>
+    </div>
+  </div>
+
+  <a href="#colors">Фирменные цвета</a>
+  <a href="#typography">Типографика</a>
+  <a href="#graphics">Графика и фотостиль</a>
+
+  <div class="toc-dropdown">
+    <div class="toc-dropdown-row">
+      <a href="#uikit" class="toc-dropdown-link">UI Kit</a>
+
+      <button
+        class="toc-dropdown-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Раскрыть раздел UI Kit"
+      >
+        <span></span>
+      </button>
+    </div>
+
+    <div class="toc-submenu" hidden>
+      <a href="#ui-colors">Цвета</a>
+      <a href="#ui-typography">Типографика</a>
+      <a href="#ui-grid">Сетка</a>
+      <a href="#ui-buttons">Кнопки</a>
+      <a href="#ui-dropdowns">Дропдауны и инпуты</a>
+      <a href="#ui-tabs-checkboxes">Табы и чекбоксы</a>
+      <a href="#ui-cards">Карточки</a>
+      <a href="#ui-modals">Всплывающие окна</a>
+    </div>
+  </div>
+</div>
 
       <div class="toc-group">
         <p class="toc-group-title">Носители</p>
-        <a href="#carriers">Носители бренда</a>
+        <a href="#carriers">Правила оформления</a>
         <a href="#gallery">Галерея макетов</a>
       </div>
 
@@ -133,274 +177,448 @@
           <h3>Визуальная система</h3>
           <a href="#visual">Основные элементы</a>
           <a href="#logo">Логотип</a>
-          <a href="#colors">Цветовая палитра</a>
+          <a href="#colors">Фирменные цвета</a>
           <a href="#typography">Типографика</a>
-          <a href="#graphics">Фирменная графика</a>
+          <a href="#graphics">Графика и фотостиль</a>
           <a href="#uikit">UI Kit</a>
         </article>
 
         <article class="contents-card">
           <span>03</span>
           <h3>Носители бренда</h3>
-          <a href="#carriers">Печатные носители</a>
-          <a href="#carriers">Digital-носители</a>
+          
+          <a href="#carriers">Правила оформления</a>
           <a href="#gallery">Галерея макетов</a>
           <a href="#contacts">Контакты</a>
         </article>
       </div>
     </section>
 
-    <section class="screen" id="meaning">
-      <div class="section-head">
-        <p class="eyebrow">01 Концепция бренда</p>
-        <h2>Концепция бренда</h2>
-        <p>
-          Здесь описывается идея бренда NUVIRA, его ценности, характер,
-          аудитория и коммуникационная стратегия.
-        </p>
-      </div>
-
-<div class="accordion" data-accordion>
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Название и слоган</span>
-      <b aria-hidden="true"></b>
-    </button>
-
-    <div class="acc-panel" hidden>
+<section class="screen" id="meaning">
+  <div class="meaning-scroll">
+    <div class="section-head">
+      <p class="eyebrow">01 Концепция бренда</p>
+      <h2>Концепция бренда</h2>
       <p>
-        <strong>Название:</strong> NUVIRA. Здесь можно описать происхождение
-        названия, ассоциации, настроение и связь с идеей бренда.
-      </p>
-      <p>
-        <strong>Слоган:</strong> [ВПИШИ СЛОГАН]. Здесь можно объяснить,
-        какую эмоцию и мысль он передает аудитории.
+        В этом разделе описывается смысловая основа бренда NUVIRA:
+        название, миссия, философия, позиционирование, визуальная стратегия,
+        целевая аудитория и тон коммуникации.
       </p>
     </div>
-  </article>
 
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Миссия и ценности</span>
-      <b aria-hidden="true"></b>
-    </button>
+    <div class="accordion" data-accordion>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Название и слоган</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-    <div class="acc-panel" hidden>
-      <p>
-        <strong>Миссия:</strong> [ВПИШИ МИССИЮ БРЕНДА].
-      </p>
-      <p>
-        <strong>Ценности:</strong> забота, индивидуальность, развитие,
-        эстетика, доверие.
-      </p>
-    </div>
-  </article>
+        <div class="acc-panel" hidden>
+          <p>
+            <strong>Название:</strong> NUVIRA.
+          </p>
 
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Философия бренда</span>
-      <b aria-hidden="true"></b>
-    </button>
+          <p>
+            NUVIRA — авторское название, построенное как мягкий англицизм.
+            Первая часть, NU, отсылает к слову new — «новый»: новый взгляд
+            на тревогу, новый способ заботы о себе, новый шаг к спокойствию.
+          </p>
 
-    <div class="acc-panel" hidden>
-      <p>
-        Философия NUVIRA строится на идее мягкой поддержки, спокойного развития
-        и бережного отношения к человеку. Бренд помогает создать ощущение доверия,
-        заботы и внутреннего равновесия.
-      </p>
-    </div>
-  </article>
+          <p>
+            Вторая часть, VIRA, раскрывает идею освобождения: от внутреннего
+            напряжения, тревожных мыслей и эмоциональной перегрузки. Вместе
+            NUVIRA передаёт смысл бренда: мягкий переход к более свободному
+            и спокойному состоянию.
+          </p>
 
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Позиционирование и УТП</span>
-      <b aria-hidden="true"></b>
-    </button>
+          <p>
+            Название звучит современно, легко запоминается и хорошо работает
+            в цифровой среде: в логотипе, интерфейсе, иконке приложения
+            и на бренд-носителях.
+          </p>
 
-    <div class="acc-panel" hidden>
-      <p>
-        NUVIRA позиционируется как [ОПИШИ ПОЗИЦИОНИРОВАНИЕ].
-        Уникальное торговое предложение бренда — [ОПИШИ УТП].
-      </p>
-    </div>
-  </article>
+          <p>
+            <strong>Слоган:</strong> Свободен от тревожных мыслей.
+          </p>
 
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Визуальная стратегия</span>
-      <b aria-hidden="true"></b>
-    </button>
-
-    <div class="acc-panel" hidden>
-      <p>
-        Визуальная стратегия бренда основана на мягкой цветовой палитре,
-        округлых формах, дружелюбной графике и чистой композиции. Все элементы
-        должны поддерживать ощущение спокойствия, заботы и узнаваемости.
-      </p>
-    </div>
-  </article>
-
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Целевая аудитория</span>
-      <b aria-hidden="true"></b>
-    </button>
-
-    <div class="acc-panel" hidden>
-      <p>
-        Основная аудитория бренда — [ОПИШИ ВОЗРАСТ, ИНТЕРЕСЫ,
-        ПОТРЕБНОСТИ, СТИЛЬ ЖИЗНИ И МОТИВАЦИЮ].
-      </p>
-    </div>
-  </article>
-
-  <article class="acc-item">
-    <button class="acc-button" type="button" aria-expanded="false">
-      <span>Tone of voice</span>
-      <b aria-hidden="true"></b>
-    </button>
-
-    <div class="acc-panel" hidden>
-      <p>
-        Тон коммуникации бренда: мягкий, дружелюбный, поддерживающий,
-        современный и уверенный.
-      </p>
-    </div>
-  </article>
-</div>
-    </section>
-
-    <section class="screen" id="visual">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система</p>
-        <h2>Основные элементы фирменного стиля</h2>
-        <p>
-          Раздел объединяет логотип, цвет, типографику, графику, фотостиль
-          и интерфейсные компоненты бренда.
-        </p>
-      </div>
-
-      <div class="tabs visual-tabs" data-tabs>
-        <div class="tab-buttons visual-switcher" role="tablist" aria-label="Элементы визуальной системы">
-          <button type="button" role="tab" aria-selected="true">Логотип</button>
-          <button type="button" role="tab" aria-selected="false">Цвет</button>
-          <button type="button" role="tab" aria-selected="false">Типографика</button>
-          <button type="button" role="tab" aria-selected="false">Графика</button>
-          <button type="button" role="tab" aria-selected="false">UI Kit</button>
+          <p>
+            Слоган передаёт желаемое состояние пользователя после взаимодействия
+            с приложением. Он фиксирует эмоциональный ориентир бренда: помочь
+            человеку немного освободиться от напряжения, переключиться
+            и почувствовать больше внутренней лёгкости.
+          </p>
         </div>
+      </article>
 
-        <div class="tab-panel visual-panel">
-          <div class="visual-panel-side">
-            <h3>Логотип</h3>
-            <a href="#logo" class="button visual-panel-link">Перейти к разделу</a>
-          </div>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Миссия и ценности</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-          <div class="visual-panel-content">
-            <p>
-              В разделе собраны основные версии логотипа, его построение,
-              охранное поле, цветовые версии, минимальные размеры
-              и правила корректного использования.
-            </p>
+        <div class="acc-panel" hidden>
+          <p>
+            <strong>Миссия NUVIRA</strong> — сделать работу с эмоциями простой,
+            понятной и бережной. Приложение помогает человеку получать мягкую
+            поддержку в течение дня, снижать ситуативную тревожность
+            и постепенно формировать навыки саморегуляции без давления
+            и сложной подачи.
+          </p>
 
-            <ul class="visual-panel-list">
-              <li>Основная и дополнительные версии</li>
-              <li>Построение по сетке</li>
-              <li>Охранное поле</li>
-              <li>Минимальные размеры</li>
-              <li>Ошибки использования</li>
-            </ul>
-          </div>
+          <p>
+            <strong>Бережность.</strong> NUVIRA не требует от пользователя быть
+            спокойным, продуктивным или «правильным». Приложение принимает разные
+            эмоциональные состояния и предлагает поддержку в комфортном темпе.
+          </p>
+
+          <p>
+            <strong>Простота.</strong> В момент тревоги человеку сложно воспринимать
+            длинные инструкции. Поэтому NUVIRA строит взаимодействие через короткие
+            действия, понятные экраны и быстрый переход к практике.
+          </p>
+
+          <p>
+            <strong>Поддержка здесь и сейчас.</strong> Главный фокус бренда —
+            дать пользователю инструмент, который можно использовать сразу:
+            в момент тревоги, усталости, раздражения или эмоционального перегруза.
+          </p>
+
+          <p>
+            <strong>Безопасность.</strong> Визуальный стиль, интерфейс и тексты
+            не должны усиливать тревожность. Бренд избегает пугающих образов,
+            агрессивных цветов, медицинской холодности и давления.
+          </p>
+
+          <p>
+            <strong>Регулярность.</strong> NUVIRA помогает выстраивать привычку
+            заботы о себе через практики, дневник, статистику и небольшие
+            позитивные действия.
+          </p>
         </div>
+      </article>
 
-        <div class="tab-panel visual-panel" hidden>
-          <div class="visual-panel-side">
-            <h3>Цвет</h3>
-            <a href="#colors" class="button visual-panel-link">Перейти к разделу</a>
-          </div>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Философия бренда</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-          <div class="visual-panel-content">
-            <p>
-              Здесь показывается фирменная цветовая палитра бренда:
-              основные и дополнительные оттенки, а также их значения
-              HEX, RGB и CMYK.
-            </p>
+        <div class="acc-panel" hidden>
+          <p>
+            Философия NUVIRA основана на идее:
+            <strong>эмоции — это просто</strong>.
+          </p>
 
-            <ul class="visual-panel-list">
-              <li>Основной фирменный цвет</li>
-              <li>Фоновые и карточные оттенки</li>
-              <li>Digital- и print-значения</li>
-              <li>Правила применения цвета</li>
-            </ul>
-          </div>
+          <p>
+            Эта идея не обесценивает сложные переживания. Тревога, усталость,
+            раздражение и внутреннее напряжение могут быть тяжёлыми состояниями,
+            но взаимодействие с ними не должно быть сложным или пугающим.
+          </p>
+
+          <p>
+            NUVIRA помогает подойти к эмоциям мягко: выбрать своё состояние,
+            сделать короткую практику, записать причину тревоги, посмотреть
+            на динамику или переключиться на что-то хорошее.
+          </p>
+
+          <p>
+            Бренд не предлагает пользователю «исправить себя». Он помогает сделать
+            маленький шаг в сторону спокойствия. NUVIRA не заменяет специалиста
+            и не ставит диагнозы, а работает как ежедневная точка опоры: помогает
+            в моменте, снижает напряжение и сохраняет важные наблюдения
+            для дальнейшей работы с собой или психологом.
+          </p>
         </div>
+      </article>
 
-        <div class="tab-panel visual-panel" hidden>
-          <div class="visual-panel-side">
-            <h3>Типографика</h3>
-            <a href="#typography" class="button visual-panel-link">Перейти к разделу</a>
-          </div>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Позиционирование и УТП</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-          <div class="visual-panel-content">
-            <p>
-              Раздел описывает шрифтовую систему бренда: заголовочный
-              и основной шрифты, иерархию текста, размеры, акценты
-              и правила набора.
-            </p>
+        <div class="acc-panel" hidden>
+          <p>
+            NUVIRA позиционируется как мобильное приложение для мягкой эмоциональной
+            поддержки и быстрой помощи в момент тревоги. Продукт помогает пользователю
+            справляться с напряжением «здесь и сейчас», фиксировать тревожащие
+            ситуации, видеть динамику состояния и постепенно формировать более
+            бережное отношение к себе.
+          </p>
 
-            <ul class="visual-panel-list">
-              <li>Шрифтовая пара бренда</li>
-              <li>Иерархия заголовков</li>
-              <li>Основной текст и подписи</li>
-              <li>Принципы читаемости</li>
-            </ul>
-          </div>
+          <p>
+            В отличие от сервисов, которые делают акцент только на медитациях,
+            дневниках или аналитике настроения, NUVIRA объединяет несколько
+            поддерживающих инструментов в одном спокойном интерфейсе.
+          </p>
+
+          <p>
+            <strong>Уникальное торговое предложение NUVIRA</strong> — быстрая
+            эмоциональная поддержка в 1–2 действия: пользователь может сразу
+            перейти к практике, зафиксировать тревогу, обратиться к позитивному
+            интерактиву или сохранить наблюдения для дальнейшей работы с психологом.
+          </p>
+
+          <p>
+            <strong>Практики для быстрой помощи.</strong> Короткие упражнения
+            помогают снизить тревожность, переключить внимание и вернуться
+            к более спокойному состоянию.
+          </p>
+
+          <p>
+            <strong>Дневник тревоги.</strong> Пользователь может отметить, что именно
+            вызвало тревогу и когда это произошло. Записи помогают видеть повторяющиеся
+            ситуации и могут быть экспортированы для обсуждения со специалистом.
+          </p>
+
+          <p>
+            <strong>Статистика состояния.</strong> Динамика помогает отслеживать
+            изменения и понимать, какие действия дают больше поддержки.
+          </p>
+
+          <p>
+            <strong>Добро-журнал.</strong> Мини-интерактив, в котором пользователь
+            фиксирует хорошие моменты дня и смещает внимание с тревожных мыслей
+            на позитивный опыт.
+          </p>
+
+          <p>
+            <strong>Мотивашки.</strong> Раздел с мотивационными цитатами на день,
+            который поддерживает пользователя в мягкой и ненавязчивой форме.
+          </p>
+
+          <p>
+            <strong>Хорошее в мире.</strong> Пространство с добрыми новостями
+            и мемами, подобранными специально под эмоциональный тон приложения.
+          </p>
+
+          <p>
+            <strong>Каталог психологов.</strong> Второстепенная функция, которая
+            помогает пользователю перейти от самоподдержки к профессиональной помощи,
+            когда это необходимо.
+          </p>
         </div>
+      </article>
 
-        <div class="tab-panel visual-panel" hidden>
-          <div class="visual-panel-side">
-            <h3>Графика</h3>
-            <a href="#graphics" class="button visual-panel-link">Перейти к разделу</a>
-          </div>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Визуальная стратегия</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-          <div class="visual-panel-content">
-            <p>
-              В этом разделе раскрываются дополнительные визуальные элементы:
-              фирменная графика, паттерны, маскот, фотостиль
-              и общий характер визуальной подачи.
-            </p>
+        <div class="acc-panel" hidden>
+          <p>
+            Визуальная стратегия NUVIRA строится вокруг ощущения спокойствия,
+            принятия и безопасного пространства. Так как приложение связано
+            с тревожностью и эмоциональным состоянием, дизайн не должен создавать
+            дополнительную нагрузку. Его задача — помогать пользователю быстрее
+            ориентироваться и чувствовать себя увереннее.
+          </p>
 
-            <ul class="visual-panel-list">
-              <li>Паттерны и декоративные элементы</li>
-              <li>Маскот бренда</li>
-              <li>Фотостиль</li>
-              <li>Поддерживающая графическая система</li>
-            </ul>
-          </div>
+          <p>
+            Основу визуальной системы составляют мягкие пастельные оттенки,
+            округлые формы, крупные отступы, карточная структура и дружелюбная
+            графика. Эти элементы делают интерфейс спокойным, понятным
+            и неагрессивным.
+          </p>
+
+          <p>
+            Маскот является важным эмоциональным элементом бренда. Он появляется
+            в практиках и итоговых выводах, поддерживая пользователя в ключевых
+            точках сценария. Его задача — не развлекать и не превращать приложение
+            в игру, а смягчать взаимодействие с тревожной темой и добавлять
+            ощущение присутствия.
+          </p>
+
+          <p>
+            Цветовая палитра поддерживает эмоциональный тон бренда. Светлые
+            и розово-лавандовые оттенки создают ощущение мягкости, а синие
+            и фиолетовые тона добавляют спокойствие, устойчивость и доверие.
+            Тёплые акценты используются аккуратно, чтобы направлять внимание
+            на действие без давления.
+          </p>
+
+          <p>
+            Визуальная система NUVIRA должна сохранять баланс: быть мягкой,
+            но не инфантильной; современной, но не холодной; эмоциональной,
+            но не перегруженной.
+          </p>
         </div>
+      </article>
 
-        <div class="tab-panel visual-panel" hidden>
-          <div class="visual-panel-side">
-            <h3>UI Kit</h3>
-            <a href="#uikit" class="button visual-panel-link">Перейти к разделу</a>
-          </div>
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Целевая аудитория</span>
+          <b aria-hidden="true"></b>
+        </button>
 
-          <div class="visual-panel-content">
-            <p>
-              UI Kit фиксирует основные digital-компоненты бренда:
-              кнопки, поля ввода, карточки, токены интерфейса
-              и базовые интерактивные состояния.
-            </p>
+        <div class="acc-panel" hidden>
+          <p>
+            Основная целевая аудитория NUVIRA — молодые взрослые от 18 до 35 лет,
+            которые активно пользуются мобильными технологиями и сталкиваются
+            с тревожностью, усталостью, эмоциональной перегрузкой или сложностями
+            с переключением внимания.
+          </p>
 
-            <ul class="visual-panel-list">
-              <li>Кнопки и состояния</li>
-              <li>Поля ввода</li>
-              <li>Карточки и поверхности</li>
-              <li>Цветовые токены интерфейса</li>
-            </ul>
-          </div>
+          <p>
+            Для этой аудитории особенно важны быстрый доступ к поддержке,
+            спокойный интерфейс, отсутствие сложных инструкций и ощущение,
+            что приложение не оценивает пользователя, а помогает справиться
+            с состоянием в моменте.
+          </p>
+
+          <p>
+            <strong>Карта персоны 1 — Илья.</strong>
+          </p>
+
+          <p>
+            <strong>Возраст:</strong> 29 лет.<br>
+            <strong>Статус:</strong> IT-специалист.<br>
+            <strong>Образ жизни:</strong> большую часть дня проводит за экраном,
+            сталкивается с высокой умственной нагрузкой, переработками
+            и нарушением режима сна.<br>
+            <strong>Проблема:</strong> испытывает внутреннее напряжение, усталость
+            и сложности с концентрацией.<br>
+            <strong>Потребность:</strong> понятный инструмент, который помогает
+            быстро перейти к действию и отслеживать динамику состояния.<br>
+            <strong>Как помогает NUVIRA:</strong> даёт быстрый вход в практики,
+            статистику состояния, дневник тревоги и возможность сохранять наблюдения
+            для дальнейшего анализа.
+          </p>
+
+          <p>
+            <strong>Карта персоны 2 — Дарья.</strong>
+          </p>
+
+          <p>
+            <strong>Возраст:</strong> 32 года.<br>
+            <strong>Статус:</strong> работающая взрослая, совмещает работу, быт
+            и заботу о семье.<br>
+            <strong>Образ жизни:</strong> живёт в режиме высокой ответственности,
+            часто переключается между рабочими и личными задачами.<br>
+            <strong>Проблема:</strong> в моменты тревоги ей нужен простой способ
+            успокоиться без долгой настройки и лишних действий.<br>
+            <strong>Потребность:</strong> мягкий визуальный стиль, короткие практики
+            и возможность фиксировать повторяющиеся причины тревоги.<br>
+            <strong>Как помогает NUVIRA:</strong> предлагает быстрые антистресс-практики,
+            дневник тревоги, позитивные разделы и каталог психологов как дополнительную
+            возможность обратиться за профессиональной поддержкой.
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <article class="acc-item">
+        <button class="acc-button" type="button" aria-expanded="false">
+          <span>Tone of voice</span>
+          <b aria-hidden="true"></b>
+        </button>
+
+        <div class="acc-panel" hidden>
+          <p>
+            Tone of voice NUVIRA — мягкий, дружелюбный, поддерживающий и спокойный.
+          </p>
+
+          <p>
+            Бренд говорит с пользователем простым человеческим языком. Он не использует
+            сложные психологические термины без необходимости, не пугает последствиями,
+            не оценивает и не давит. Интонация NUVIRA должна создавать ощущение
+            безопасности: пользователь может быть уставшим, тревожным, раздражённым
+            или растерянным — и всё равно чувствовать, что приложение остаётся рядом.
+          </p>
+
+          <p>
+            <strong>Бережность.</strong> Тексты не должны звучать как приказ или
+            требование. NUVIRA мягко предлагает действие, а не заставляет пользователя
+            немедленно менять состояние.
+          </p>
+
+          <p>
+            <strong>Краткость.</strong> В момент тревоги человеку сложно воспринимать
+            длинные объяснения, поэтому интерфейсные формулировки должны быть короткими,
+            ясными и спокойными.
+          </p>
+
+          <p>
+            <strong>Отсутствие оценки.</strong> Бренд не делит состояния на «хорошие»
+            и «плохие». Он помогает пользователю принять текущее состояние и выбрать
+            подходящий способ поддержки.
+          </p>
+
+          <p>
+            <strong>Ощущение присутствия.</strong> NUVIRA звучит как внимательный друг:
+            не драматизирует, не морализирует, не перегружает советами, а спокойно
+            помогает сделать следующий шаг.
+          </p>
+
+          <p>
+            <strong>Позитив без токсичности.</strong> В разделах с мотивационными
+            цитатами, добрыми новостями и хорошими моментами важно сохранять
+            естественный тон. Бренд поддерживает, но не обесценивает тревогу фразами
+            вроде «просто думай позитивно».
+          </p>
+
+          <p>
+            Tone of voice NUVIRA должен быть тёплым, но не слишком детским; спокойным,
+            но не отстранённым; поддерживающим, но не навязчивым.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="visual">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система</p>
+    <h2>Основные элементы фирменного стиля</h2>
+    <p>
+      Раздел объединяет логотип, цвет, типографику, графику, фотостиль
+      и интерфейсные компоненты бренда.
+    </p>
+  </div>
+
+  <div class="visual-menu-grid">
+    <a class="visual-menu-card" href="#logo">
+      <h3>Логотип</h3>
+      <p>
+        Основная версия логотипа, построение, охранное поле,
+        цветовые версии, минимальные размеры и ошибки использования.
+      </p>
+    </a>
+
+    <a class="visual-menu-card" href="#colors">
+      <h3>Цвет</h3>
+      <p>
+        Фирменная палитра бренда: основные и дополнительные оттенки,
+        значения HEX, RGB и правила применения цвета.
+      </p>
+    </a>
+
+    <a class="visual-menu-card" href="#typography">
+      <h3>Типографика</h3>
+      <p>
+        Шрифтовая система бренда, иерархия заголовков,
+        основной текст, подписи и интерфейсные надписи.
+      </p>
+    </a>
+
+    <a class="visual-menu-card" href="#graphics">
+      <h3>Графика</h3>
+      <p>
+        Фирменные графические элементы, паттерны, маскот,
+        фотостиль и поддерживающая визуальная система.
+      </p>
+    </a>
+
+    <a class="visual-menu-card" href="#uikit">
+      <h3>UI Kit</h3>
+      <p>
+        Набор интерфейсных компонентов: цвета, кнопки, поля ввода,
+        карточки, табы, чекбоксы и всплывающие окна.
+      </p>
+    </a>
+  </div>
+</section>
 
     <section class="screen" id="logo">
       <div class="section-head">
@@ -416,18 +634,31 @@
           <img src="assets/images/logo-main.png" alt="Логотип NUVIRA">
         </div>
 
-        <div class="logo-main-text">
-          <p>
-            Логотип NUVIRA отражает мягкий, современный и заботливый характер бренда.
-            Он используется во всех основных коммуникационных материалах: на сайте,
-            в социальных сетях, презентациях, документах и рекламных носителях.
-          </p>
+   <div class="logo-main-text">
+  <p>
+    Фирменный блок бренда «NUVIRA» состоит из двух элементов:
+    фирменного знака и логотипа.
+  </p>
 
-          <p>
-            При использовании логотипа важно сохранять его пропорции, цветовое решение,
-            читаемость и свободное пространство вокруг фирменного блока.
-          </p>
-        </div>
+  <p>
+    Фирменный знак представляет собой четыре округлые карточки
+    с эмоциональными образами. Они символизируют разные состояния
+    пользователя и раскрывают идею бренда — «эмоции — это просто».
+  </p>
+
+  <p>
+    Мягкие формы и фирменная палитра создают ощущение безопасности,
+    дружелюбия и поддержки. Логотип дополняет знак и формирует образ
+    спокойного цифрового пространства, к которому можно обратиться
+    в момент тревоги.
+  </p>
+
+  <p>
+    При использовании фирменного блока необходимо соблюдать правила
+    данного руководства. Недопустимы изменения пропорций, цветов,
+    композиции и других параметров, не предусмотренных брендбуком.
+  </p>
+</div>
       </article>
     </section>
 
@@ -540,27 +771,36 @@
               Фирменный цвет
             </button>
 
-            <button class="color-version-option" type="button" data-color-version="complex">
-              Сложный фон
-            </button>
           </div>
 
-          <div class="brand-color-switcher" id="brandColorSwitcher" hidden>
-            <button class="brand-color-option is-active" type="button" data-brand-color="primary">
-              <span style="--swatch:#4A509A"></span>
-              Primary
-            </button>
+        <div class="brand-color-switcher" id="brandColorSwitcher" hidden>
+  <button
+    class="brand-color-option is-active"
+    type="button"
+    data-brand-color="blue"
+    style="--brand-c:#C9D2FD"
+  >
+    #C9D2FD
+  </button>
 
-            <button class="brand-color-option" type="button" data-brand-color="soft">
-              <span style="--swatch:#ECE8FF"></span>
-              Soft
-            </button>
+  <button
+    class="brand-color-option"
+    type="button"
+    data-brand-color="lavender"
+    style="--brand-c:#ECE8FF"
+  >
+    #ECE8FF
+  </button>
 
-            <button class="brand-color-option" type="button" data-brand-color="dark">
-              <span style="--swatch:#7A8BD5"></span>
-              Dark card
-            </button>
-          </div>
+  <button
+    class="brand-color-option"
+    type="button"
+    data-brand-color="pink"
+    style="--brand-c:#FDEDED"
+  >
+    #FDEDED
+  </button>
+</div>
 
           <div class="color-version-text">
             <h3 id="colorVersionTitle">Основная версия</h3>
@@ -579,356 +819,934 @@
         <p class="eyebrow">02 Визуальная система. Логотип</p>
         <h2>Минимальные размеры</h2>
         <p>
-          Минимальные размеры помогают сохранить читаемость логотипа на печатных и digital-носителях.
+          Минимальные размеры помогают сохранить читаемость логотипа на носителях.
         </p>
       </div>
 
       <div class="size-scale">
         <article>
-          <div class="size-logo wide">NUVIRA</div>
+          <div class="size-logo wide">
+  <img src="assets/images/logo-size-main.png" alt="Минимальный размер основной версии логотипа NUVIRA">
+</div>
           <h3>Основная версия</h3>
           <p>
-            Минимальная ширина основной версии логотипа: 42 мм для печати и 160 px для digital-носителей.
+            Минимальная ширина основной версии логотипа: 16 мм на 24 мм.
           </p>
         </article>
 
         <article>
-          <div class="size-logo sign">N</div>
+         <div class="size-logo sign">
+  <img src="assets/images/logo-size-sign.png" alt="Минимальный размер фирменного знака NUVIRA">
+</div>
           <h3>Фирменный знак</h3>
           <p>
-            Минимальная ширина фирменного знака: 12 мм для печати и 48 px для digital-носителей.
+            Минимальная ширина фирменного знака: 10 мм на 10 мм.
           </p>
         </article>
       </div>
     </section>
 
-    <section class="screen" id="logo-misuse">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система. Логотип</p>
-        <h2>Запрещённые модификации</h2>
-        <p>При воспроизведении логотипа запрещено:</p>
+<section class="screen" id="logo-misuse">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. Логотип</p>
+    <h2>Запрещённые модификации</h2>
+    <p>При воспроизведении фирменного блока запрещено:</p>
+  </div>
+
+  <div class="misuse-grid">
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-1.png" alt="Запрещено деформировать фирменный блок">
+      </div>
+      <p>Менять элементы фирменого знака местами.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-2.png" alt="Запрещено поворачивать логотип">
+      </div>
+      <p>Менять цвет элементов фирменого знака на любой, кроме фирменого темно синего.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-3.png" alt="Запрещено использовать нерегламентированные цвета">
+      </div>
+      <p>Убирать части элементов фирменого знака.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-4.png" alt="Запрещено добавлять тени и эффекты">
+      </div>
+      <p>Использовать обводку.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-5.png" alt="Запрещено нарушать пропорции">
+      </div>
+      <p>Использоваль любой другой шрифт кроме Advent Pro.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-6.png" alt="Запрещено нарушать охранное поле">
+      </div>
+      <p>Перемещать шрифтовой блок.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-7.png" alt="Запрещено размещать логотип на неконтрастном фоне">
+      </div>
+      <p>Размещать фирменный знак по горизонтали.</p>
+    </article>
+
+    <article class="misuse-item">
+      <div class="misuse-preview">
+        <img src="assets/images/misuse-8.png" alt="Запрещено менять композицию фирменного блока">
+      </div>
+      <p>Поворачивать логотип.</p>
+    </article>
+  </div>
+</section>
+
+<section class="screen" id="colors">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. Фирменные цвета</p>
+    <h2>Фирменные цвета</h2>
+    <p id="copyStatus">Кликни на цвет, чтобы скопировать HEX.</p>
+  </div>
+
+  <div class="color-palette-card tabs" data-tabs>
+    <div class="tab-buttons color-palette-tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true">Основная</button>
+      <button type="button" role="tab" aria-selected="false">Дополнительная</button>
+    </div>
+
+    <div class="tab-panel color-palette-panel">
+      <button class="swatch color-swatch-card light" style="--c:#F7EAEA" data-hex="#F7EAEA" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+        
+          <small>
+            Pantone: 705, approx.<br>
+            CMYK: 0, 5, 5, 3<br>
+            RGB: 247/234/234<br>
+            HEX: #F7EAEA
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button class="swatch color-swatch-card light" style="--c:#ECE8FF" data-hex="#ECE8FF" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          
+          <small>
+            Pantone: 656<br>
+            CMYK: 7, 9, 0, 0<br>
+            RGB: 236/232/255<br>
+            HEX: #ECE8FF
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button class="swatch color-swatch-card light" style="--c:#C4CDF5" data-hex="#C4CDF5" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          
+          <small>
+            Pantone: 2706, approx.<br>
+            CMYK: 20, 16, 0, 4<br>
+            RGB: 196/205/245<br>
+            HEX: #C4CDF5
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button class="swatch color-swatch-card light" style="--c:#EBA7C9" data-hex="#EBA7C9" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+         
+          <small>
+            Pantone: 203, approx.<br>
+            CMYK: 0, 29, 15, 8<br>
+            RGB: 235/167/201<br>
+            HEX: #EBA7C9
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+    </div>
+
+    <div class="tab-panel color-palette-panel" hidden>
+      <button class="swatch color-swatch-card light" style="--c:#F7F8FC" data-hex="#F7F8FC" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+         
+          <small>
+            Pantone: 656<br>
+            CMYK: 2, 2, 0, 1<br>
+            RGB: 247/248/252<br>
+            HEX: #F7F8FC
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button class="swatch color-swatch-card" style="--c:#4A509A" data-hex="#4A509A" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+         
+          <small>
+            Pantone: 2369<br>
+            CMYK: 52, 48, 0, 40<br>
+            RGB: 74/80/154<br>
+            HEX: #4A509A
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button class="swatch color-swatch-card" style="--c:#FF8844" data-hex="#FF8844" type="button">
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+         
+          <small>
+            Pantone: 164, approx.<br>
+            CMYK: 0, 47, 73, 0<br>
+            RGB: 255/136/68<br>
+            HEX: #FF8844
+          </small>
+          <em>Копировать</em>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="screen typography-screen" id="typography">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. Типографика</p>
+    <h2>Типографика</h2>
+    <p>
+      Типографика NUVIRA строится на сочетании двух гарнитур:
+      Advent Pro используется для заголовков и акцентных надписей,
+      Montserrat — для наборного текста, интерфейса и описательных блоков.
+    </p>
+  </div>
+
+  <div class="typography-layout">
+    <article class="type-playground-card">
+      <div class="type-controls">
+        <label>
+          <span>Размер</span>
+          <input id="fontRange" type="range" min="24" max="110" value="72">
+        </label>
+
+        <label>
+          <span>Интерлиньяж</span>
+          <input id="lineRange" type="range" min="80" max="140" value="95">
+        </label>
       </div>
 
-      <div class="misuse-grid">
-        <article class="misuse-item">
-          <div class="misuse-preview">NUVIRA</div>
-          <p>Деформировать фирменный блок.</p>
-        </article>
+      <div class="type-preview-surface">
+        <span class="type-label">Display</span>
 
-        <article class="misuse-item">
-          <div class="misuse-preview rotated">NUVIRA</div>
-          <p>Поворачивать логотип без необходимости.</p>
-        </article>
-
-        <article class="misuse-item">
-          <div class="misuse-preview wrong-color">NUVIRA</div>
-          <p>Использовать нерегламентированные цвета.</p>
-        </article>
-
-        <article class="misuse-item">
-          <div class="misuse-preview shadowed">NUVIRA</div>
-          <p>Добавлять тени, обводки и эффекты.</p>
-        </article>
-
-        <article class="misuse-item">
-          <div class="misuse-preview compressed">NUVIRA</div>
-          <p>Нарушать пропорции и масштабирование.</p>
-        </article>
-
-        <article class="misuse-item">
-          <div class="misuse-preview crowded">NUVIRA</div>
-          <p>Нарушать охранное поле.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="screen" id="colors">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система. Цветовая палитра</p>
-        <h2>Фирменные цвета</h2>
-        <p id="copyStatus">Кликни на цвет, чтобы скопировать HEX.</p>
-      </div>
-
-      <div class="color-palette-card tabs" data-tabs>
-        <div class="tab-buttons color-palette-tabs" role="tablist">
-          <button type="button" role="tab" aria-selected="true">Основная</button>
-          <button type="button" role="tab" aria-selected="false">Дополнительная</button>
-        </div>
-
-        <div class="tab-panel color-palette-panel">
-          <button class="swatch color-swatch-card light" style="--c:#F7F8FC" data-hex="#F7F8FC" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Background</b>
-              <small>HEX #F7F8FC<br>RGB 247 248 252</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-
-          <button class="swatch color-swatch-card light" style="--c:#ECE8FF" data-hex="#ECE8FF" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Primary Soft</b>
-              <small>HEX #ECE8FF<br>Мягкий карточный фон</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-
-          <button class="swatch color-swatch-card light" style="--c:#C4CDF5" data-hex="#C4CDF5" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Lavender Blue</b>
-              <small>HEX #C4CDF5<br>Дополнительный светлый тон</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-
-          <button class="swatch color-swatch-card" style="--c:#4A509A" data-hex="#4A509A" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Primary Blue</b>
-              <small>HEX #4A509A<br>Основной фирменный цвет</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-        </div>
-
-        <div class="tab-panel color-palette-panel" hidden>
-          <button class="swatch color-swatch-card light" style="--c:#F7EAEA" data-hex="#F7EAEA" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Soft Pink</b>
-              <small>HEX #F7EAEA<br>Нежный фоновый оттенок</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-
-          <button class="swatch color-swatch-card light" style="--c:#EBA7C9" data-hex="#EBA7C9" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Mascot Pink</b>
-              <small>HEX #EBA7C9<br>Акцентный розовый</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-
-          <button class="swatch color-swatch-card" style="--c:#FF8844" data-hex="#FF8844" type="button">
-            <span class="swatch-color"></span>
-            <span class="swatch-info">
-              <b>Orange Accent</b>
-              <small>HEX #FF8844<br>Тёплый акцент</small>
-              <em>Копировать</em>
-            </span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen typography-screen" id="typography">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система. Типографика</p>
-        <h2>Шрифтовая система</h2>
-        <p>
-          Двухгарнитурная система: Advent Pro используется для заголовков,
-          Montserrat — для основного текста и интерфейса.
+        <p id="typePreview">
+          Эмоции — это просто
         </p>
+
       </div>
+    </article>
 
-      <div class="typography-layout">
-        <article class="type-playground-card">
-          <div class="type-controls">
-            <label>
-              <span>Размер</span>
-              <input id="fontRange" type="range" min="42" max="110" value="72">
-            </label>
-
-            <label>
-              <span>Интерлиньяж</span>
-              <input id="lineRange" type="range" min="80" max="140" value="95">
-            </label>
-          </div>
-
-          <div class="type-preview-surface">
-            <span class="type-label">Display</span>
-
-            <p id="typePreview">
-              NUVIRA говорит мягко
-            </p>
-
-            <span class="type-label">Body</span>
-
-            <p class="type-body-preview">
-              Типографика формирует характер коммуникации. Правильный выбор гарнитуры —
-              это выбор интонации бренда.
-            </p>
-          </div>
-        </article>
-
-        <article class="type-info-card">
-          <div class="font-cards">
-            <div class="font-card">
-              <span>DISPLAY</span>
-              <h3>Advent Pro</h3>
-              <p>
-                Заголовки, крупные акценты, обложки и выразительные смысловые блоки.
-                Начертание — 600.
-              </p>
-            </div>
-
-            <div class="font-card">
-              <span>BODY</span>
-              <h3>Montserrat</h3>
-              <p>
-                Основной набор, интерфейс, подписи, кнопки и описательные тексты.
-                Начертания — 400, 500, 700.
-              </p>
-            </div>
-          </div>
-
-          <div class="type-note">
-            Минимальный кегль для основного текста — 14 px для digital и 8 pt для печати.
-            Заголовки рекомендуется использовать от 42 px и крупнее.
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="screen" id="graphics">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система. Фирменная графика</p>
-        <h2>Графика и фотостиль</h2>
-        <p>
-          Раздел показывает дополнительные визуальные элементы бренда: паттерн,
-          графические элементы, маскота и принципы фотостиля.
-        </p>
-      </div>
-
-      <article class="graphics-showcase-card">
-        <div class="graphics-switcher">
-          <button class="graphics-mode is-active" type="button" data-graphics-mode="patterns">
-            Паттерн
-          </button>
-
-          <button class="graphics-mode" type="button" data-graphics-mode="graphic">
-            Графический элемент
-          </button>
-
-          <button class="graphics-mode" type="button" data-graphics-mode="mascot">
-            Маскот
-          </button>
-
-          <button class="graphics-mode" type="button" data-graphics-mode="photo">
-            Фотостиль
-          </button>
+    <article class="type-info-card">
+      <div class="font-cards">
+        <div class="font-card">
+          <span>DISPLAY</span>
+          <h3>Advent Pro</h3>
+          <p>
+             Используется для заголовков, крупных акцентов, обложек и выразительных
+  смысловых блоков. Основные начертания — SemiBold 600 и Bold 700.
+  Минимальный размер: 24 px для digital и 18 pt для печати.
+          </p>
         </div>
 
-        <div class="graphics-card-main">
-          <div class="graphics-preview">
-            <div class="graphics-image-box">
-              <img id="graphicsImage" src="assets/images/pattern-1.png" alt="Фирменный паттерн NUVIRA">
-            </div>
-
-            <div class="graphics-pagination" id="graphicsPagination" aria-label="Навигация по изображениям"></div>
-          </div>
-
-          <div class="graphics-content">
-            <h3 id="graphicsTitle">Паттерн</h3>
-
-            <p id="graphicsDescription">
-              Фирменный паттерн используется как мягкий фоновый элемент.
-              Он помогает создать спокойное, дружелюбное и узнаваемое настроение бренда NUVIRA.
-            </p>
-          </div>
+        <div class="font-card">
+          <span>BODY</span>
+          <h3>Montserrat</h3>
+          <p>
+             Используется для наборного текста, описаний, подписей, кнопок
+  и интерфейсных элементов. Основное начертание — Regular 400.
+  Минимальный размер: 16 px для digital и 12 pt для печати.
+          </p>
         </div>
-      </article>
-    </section>
+      </div>
+    </article>
+  </div>
+</section>
 
-    <section class="screen" id="uikit">
-      <div class="section-head">
-        <p class="eyebrow">02 Визуальная система. UI Kit</p>
-        <h2>Компоненты интерфейса</h2>
-        <p>
-          UI Kit фиксирует основные элементы digital-коммуникации: кнопки, поля, карточки и состояния.
+   <section class="screen" id="graphics">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. Графика и фотостиль</p>
+    <h2>Графика и фотостиль</h2>
+    <p>
+      Раздел показывает дополнительные визуальные элементы бренда: паттерн,
+      графические элементы, маскота и принципы фотостиля.
+    </p>
+  </div>
+
+  <article class="graphics-showcase-card">
+    <div class="graphics-switcher">
+      <button class="graphics-mode is-active" type="button" data-graphics-mode="patterns">
+        Паттерн
+      </button>
+
+      <button class="graphics-mode" type="button" data-graphics-mode="graphic">
+        Графический элемент
+      </button>
+
+      <button class="graphics-mode" type="button" data-graphics-mode="mascot">
+        Маскот
+      </button>
+
+      <button class="graphics-mode" type="button" data-graphics-mode="photo">
+        Фотостиль
+      </button>
+    </div>
+
+    
+
+    <div class="graphics-card-main">
+      <div class="graphics-preview">
+        <div class="graphics-image-box">
+          <img id="graphicsImage" src="assets/images/pattern-1.png" alt="Фирменный паттерн NUVIRA">
+        </div>
+
+        <div class="graphics-pagination" id="graphicsPagination" aria-label="Навигация по изображениям"></div>
+      </div>
+
+      <div class="graphics-content">
+        <h3 id="graphicsTitle">Паттерн</h3>
+
+        <p id="graphicsDescription">
+          Фирменный паттерн используется как мягкий фоновый элемент.
+          Он помогает создать спокойное, дружелюбное и узнаваемое настроение бренда NUVIRA.
         </p>
-        <button class="button" type="button" data-modal="uiModal">Правила UI</button>
+        <div class="graphics-color-switcher" id="graphicsColorSwitcher" hidden>
+      <button
+        class="graphics-color-option"
+        type="button"
+        data-graphics-color="#FDEDED"
+        style="--graphics-c:#FDEDED"
+        aria-label="Фон #FDEDED"
+      ></button>
+
+      <button
+        class="graphics-color-option"
+        type="button"
+        data-graphics-color="#ECE8FF"
+        style="--graphics-c:#ECE8FF"
+        aria-label="Фон #ECE8FF"
+      ></button>
+
+      <button
+        class="graphics-color-option is-active"
+        type="button"
+        data-graphics-color="#F7F8FC"
+        style="--graphics-c:#F7F8FC"
+        aria-label="Фон #F7F8FC"
+      ></button>
+
+      <button
+        class="graphics-color-option"
+        type="button"
+        data-graphics-color="#C9D2FD"
+        style="--graphics-c:#C9D2FD"
+        aria-label="Фон #C9D2FD"
+      ></button>
+    </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="screen" id="uikit">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система</p>
+    <h2>UI Kit</h2>
+  </div>
+
+  <div class="uikit-menu-grid">
+    <a class="uikit-menu-card" href="#ui-colors">
+      <h3>Цвета</h3>
+      <p>Набор фирменных цветов для формирования элементов интерфейса</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-typography">
+      <h3>Типографика</h3>
+      <p>Шрифтовая система, определяющая иерархию интерфейсного текста</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-grid">
+      <h3>Сетка</h3>
+      <p>Система отступов, колонок и выравнивания элементов</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-buttons">
+      <h3>Кнопки</h3>
+      <p>Интерактивные элементы для основных и дополнительных действий</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-dropdowns">
+      <h3>Дропдауны и инпуты</h3>
+      <p>Компоненты для выбора значения из выпадающего списка</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-tabs-checkboxes">
+      <h3>Табы и чекбоксы</h3>
+      <p>Элементы переключения разделов и выбора параметров</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-cards">
+      <h3>Карточки</h3>
+      <p>Компоненты для структурированного представления информации</p>
+    </a>
+
+    <a class="uikit-menu-card" href="#ui-modals">
+      <h3>Всплывающие окна</h3>
+      <p>Модальные окна для важных сообщений и дополнительных действий</p>
+    </a>
+  </div>
+</section>
+
+<section class="screen" id="ui-colors">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Цвета</h2>
+    <p>Кликни на цвет, чтобы скопировать HEX.</p>
+  </div>
+
+  <div class="color-palette-card tabs" data-tabs id="uiColorPaletteCard">
+    <div class="uikit-color-card-top">
+      <div class="tab-buttons color-palette-tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true">Основная</button>
+        <button type="button" role="tab" aria-selected="false">Дополнительная</button>
       </div>
 
-      <div class="ui-grid">
-        <article class="ui-card">
-          <span class="ui-label">Кнопки</span>
-          <h3>Основные действия</h3>
-          <button class="button" type="button">Основная</button>
-          <button class="button secondary" type="button">Вторичная</button>
-        </article>
+      <button class="uikit-theme-card-toggle" id="uiColorThemeToggle" type="button" aria-pressed="false">
+        Тёмная тема
+      </button>
+    </div>
 
-        <article class="ui-card">
-          <span class="ui-label">Поля ввода</span>
-          <h3>Форма</h3>
-          <input class="input" type="text" placeholder="Ваше имя">
-          <input class="input" type="email" placeholder="Email">
-        </article>
+    <div class="tab-panel color-palette-panel">
+      <button
+        class="swatch color-swatch-card"
+        style="--c:#4A509A; --dark-c:#4A509A"
+        data-light-hex="#4A509A"
+        data-dark-hex="#4A509A"
+        data-hex="#4A509A"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Основной цвет для кнопок</b>
 
-        <article class="ui-card">
-          <span class="ui-label">Карточки</span>
-          <h3>Surface</h3>
-          <p>Карточки имеют мягкие скругления, светлый фон и аккуратную структуру без лишнего визуального шума.</p>
-        </article>
+          <small class="palette-info light-info">
+            Pantone: 2369<br>
+            CMYK: 52, 48, 0, 40<br>
+            RGB: 74/80/154<br>
+            HEX: #4A509A
+          </small>
 
-        <article class="ui-card ui-card-wide">
-          <span class="ui-label">Токены</span>
-          <h3>Цвета интерфейса</h3>
-          <div class="tokens-grid">
-            <div><b style="--token:#F7F8FC"></b><strong>Background</strong><small>#F7F8FC</small></div>
-            <div><b style="--token:#ECE8FF"></b><strong>Card</strong><small>#ECE8FF</small></div>
-            <div><b style="--token:#4A509A"></b><strong>Primary</strong><small>#4A509A</small></div>
-            <div><b style="--token:#292F72"></b><strong>Dark</strong><small>#292F72</small></div>
-          </div>
-        </article>
+          <small class="palette-info dark-info">
+            Pantone: 2369<br>
+            CMYK: 52, 48, 0, 40<br>
+            RGB: 74/80/154<br>
+            HEX: #4A509A
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button
+        class="swatch color-swatch-card light"
+        style="--c:#C9D2FD; --dark-c:#5D70C5"
+        data-light-hex="#C9D2FD"
+        data-dark-hex="#5D70C5"
+        data-hex="#C9D2FD"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Фоновый цвет</b>
+
+          <small class="palette-info light-info">
+            Pantone: 2706<br>
+            CMYK: 21, 17, 0, 1<br>
+            RGB: 201/210/253<br>
+            HEX: #C9D2FD
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 2726 C, approx.<br>
+            CMYK: 53, 43, 0, 23<br>
+            RGB: 93/112/197<br>
+            HEX: #5D70C5
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button
+        class="swatch color-swatch-card light"
+        style="--c:#ECE8FF; --dark-c:#7A8BD5"
+        data-light-hex="#ECE8FF"
+        data-dark-hex="#7A8BD5"
+        data-hex="#ECE8FF"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Фоновый цвет для карточек</b>
+
+          <small class="palette-info light-info">
+            Pantone: 656<br>
+            CMYK: 7, 9, 0, 0<br>
+            RGB: 236/232/255<br>
+            HEX: #ECE8FF
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 7452 C, approx.<br>
+            CMYK: 43, 35, 0, 16<br>
+            RGB: 122/139/213<br>
+            HEX: #7A8BD5
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button
+        class="swatch color-swatch-card light"
+        style="--c:#F7F8FC; --dark-c:#292F72"
+        data-light-hex="#F7F8FC"
+        data-dark-hex="#292F72"
+        data-hex="#F7F8FC"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Основной фоновый цвет</b>
+
+          <small class="palette-info light-info">
+            Pantone: 656<br>
+            CMYK: 2, 2, 0, 1<br>
+            RGB: 247/248/252<br>
+            HEX: #F7F8FC
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 2756 C, approx.<br>
+            CMYK: 64, 59, 0, 55<br>
+            RGB: 41/47/114<br>
+            HEX: #292F72
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+    </div>
+
+    <div class="tab-panel color-palette-panel" hidden>
+      <button
+        class="swatch color-swatch-card light"
+        style="--c:#F2B0CC; --dark-c:#F2B0CC"
+        data-light-hex="#F2B0CC"
+        data-dark-hex="#F2B0CC"
+        data-hex="#F2B0CC"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Дополнительный цвет</b>
+
+          <small class="palette-info light-info">
+            Pantone: 203<br>
+            CMYK: 0, 27, 16, 5<br>
+            RGB: 242/176/204<br>
+            HEX: #F2B0CC
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 203<br>
+            CMYK: 0, 27, 16, 5<br>
+            RGB: 242/176/204<br>
+            HEX: #F2B0CC
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button
+        class="swatch color-swatch-card light"
+        style="--c:#FDEDED; --dark-c:#FDEDED"
+        data-light-hex="#FDEDED"
+        data-dark-hex="#FDEDED"
+        data-hex="#FDEDED"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Дополнительный цвет</b>
+
+          <small class="palette-info light-info">
+            Pantone: 705<br>
+            CMYK: 0, 6, 6, 1<br>
+            RGB: 253/237/237<br>
+            HEX: #FDEDED
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 705<br>
+            CMYK: 0, 6, 6, 1<br>
+            RGB: 253/237/237<br>
+            HEX: #FDEDED
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+
+      <button
+        class="swatch color-swatch-card"
+        style="--c:#FF8E48; --dark-c:#FFAD7A"
+        data-light-hex="#FF8E48"
+        data-dark-hex="#FFAD7A"
+        data-hex="#FF8E48"
+        type="button"
+      >
+        <span class="swatch-color"></span>
+        <span class="swatch-info">
+          <b>Дополнительный цвет</b>
+
+          <small class="palette-info light-info">
+            Pantone: 164<br>
+            CMYK: 0, 44, 72, 0<br>
+            RGB: 255/142/72<br>
+            HEX: #FF8E48
+          </small>
+
+          <small class="palette-info dark-info">
+            Pantone: 1625 C, approx.<br>
+            CMYK: 0, 32, 52, 0<br>
+            RGB: 255/173/122<br>
+            HEX: #FFAD7A
+          </small>
+
+          <em>Копировать</em>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-typography">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Типографика</h2>
+  </div>
+
+  <div class="uikit-typography-image-card">
+    <div class="uikit-typography-images">
+      <img src="assets/images/ui-typography-1.png" alt="Типографика UI Kit NUVIRA 1">
+      <img src="assets/images/ui-typography-2.png" alt="Типографика UI Kit NUVIRA 2">
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-grid">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Сетка</h2>
+    <p>
+      Все отступы и размеры элементов построены на модульной системе
+      с базовым шагом 8 px, что обеспечивает визуальную согласованность интерфейса.
+    </p>
+  </div>
+
+  <div class="uikit-grid-image-card">
+    <img src="assets/images/ui-grid.png" alt="Модульная сетка UI Kit NUVIRA">
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-buttons">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Кнопки</h2>
+    <p>
+      Кнопки используются для управления интерфейсом, переходов между разделами,
+      запуска действий и выбора пользовательских сценариев.
+    </p>
+  </div>
+
+  <div class="uikit-buttons-showcase tabs" data-tabs>
+    <div class="tab-buttons uikit-buttons-switcher" role="tablist">
+      <button type="button" role="tab" aria-selected="true">Текстовые кнопки</button>
+      <button type="button" role="tab" aria-selected="false">Кнопки-карточки</button>
+      <button type="button" role="tab" aria-selected="false">Кнопки-иконки</button>
+    </div>
+
+    <div class="tab-panel uikit-buttons-panel">
+      <div class="uikit-buttons-image">
+        <img src="assets/images/ui-buttons-text.png" alt="Текстовые кнопки UI Kit NUVIRA">
       </div>
-    </section>
 
-    <section class="screen" id="carriers">
-      <div class="section-head">
-        <p class="eyebrow">03 Носители бренда</p>
-        <h2>Фирменные носители</h2>
-        <p>
-          Раздел включает печатные, digital- и пространственные носители бренда.
-        </p>
+      <p>
+        Текстовые кнопки применяются для основных и второстепенных действий.
+        Основные кнопки имеют заливку фирменным цветом, активное состояние выделяется
+        более светлым оттенком. Второстепенные кнопки используются для менее приоритетных действий.
+      </p>
+    </div>
+
+    <div class="tab-panel uikit-buttons-panel" hidden>
+      <div class="uikit-buttons-image">
+        <img src="assets/images/ui-buttons-cards.png" alt="Кнопки-карточки UI Kit NUVIRA">
       </div>
 
-      <div class="cards">
-        <button class="card" type="button" data-modal="printModal">
-          <h3>Печатные</h3>
-          <p>Визитки, бланки, буклеты, упаковка, сертификаты и документы.</p>
-        </button>
+      <p>
+        Кнопки-карточки используются для выбора эмоциональных состояний, быстрых действий
+        и навигационных сценариев. Компоненты могут иметь заливку, контурное состояние,
+        иконку и короткий текстовый заголовок.
+      </p>
+    </div>
 
-        <button class="card" type="button" data-modal="digitalModal">
-          <h3>Digital</h3>
-          <p>Социальные сети, баннеры, презентации, email-шаблоны и сайт.</p>
-        </button>
-
-        <button class="card" type="button" data-modal="spaceModal">
-          <h3>Среда и мерч</h3>
-          <p>Вывески, навигация, стикеры, шопперы, форма и сувенирная продукция.</p>
-        </button>
+    <div class="tab-panel uikit-buttons-panel" hidden>
+      <div class="uikit-buttons-image">
+        <img src="assets/images/ui-buttons-icons.png" alt="Кнопки-иконки UI Kit NUVIRA">
       </div>
-    </section>
+
+      <p>
+        Кнопки-иконки используются в компактных зонах интерфейса: для навигации,
+        загрузки, закрытия, прикрепления файлов, открытия меню и профиля. Для каждого элемента
+        предусмотрены состояния default и active.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-dropdowns">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Поля ввода и инпуты</h2>
+    <p>
+      Дропдауны и поля ввода используются в формах, настройках, фильтрах и сценариях,
+      где пользователь вводит данные или выбирает значение из списка.
+    </p>
+  </div>
+
+  <div class="uikit-dropdowns-showcase tabs" data-tabs>
+    <div class="tab-buttons uikit-dropdowns-switcher" role="tablist">
+      <button type="button" role="tab" aria-selected="true">Дропдауны</button>
+      <button type="button" role="tab" aria-selected="false">Инпуты</button>
+    </div>
+
+    <div class="tab-panel uikit-dropdowns-panel">
+      <div class="uikit-dropdowns-image">
+        <img src="assets/images/ui-dropdowns.png" alt="Дропдауны UI Kit NUVIRA">
+      </div>
+
+      <p>
+        Дропдауны применяются для выбора одного значения из списка. Компонент должен
+        сохранять понятную структуру, мягкие скругления и достаточный контраст между
+        активным, выбранным и неактивным состояниями.
+      </p>
+    </div>
+
+    <div class="tab-panel uikit-dropdowns-panel" hidden>
+      <div class="uikit-dropdowns-image">
+        <img src="assets/images/ui-inputs.png" alt="Инпуты UI Kit NUVIRA">
+      </div>
+
+      <p>
+        Инпуты используются для ввода текстовой информации, контактных данных и коротких
+        пользовательских сообщений. Важно сохранять читаемость плейсхолдера, заметное
+        состояние фокуса и единый стиль с остальными элементами интерфейса.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-tabs-checkboxes">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Табы и чекбоксы</h2>
+    <p>
+      Табы используются для переключения разделов внутри одного экрана,
+      а чекбоксы помогают пользователю выбрать один или несколько параметров.
+    </p>
+  </div>
+
+  <div class="uikit-photo-card">
+    <div class="uikit-photo-card-image">
+      <img src="assets/images/ui-tabs-checkboxes.png" alt="Табы и чекбоксы UI Kit NUVIRA">
+    </div>
+
+    <div class="uikit-photo-card-text">
+      <p>
+        Табы применяются для переключения между связанными разделами без перехода
+        на другую страницу. Чекбоксы используются в формах, фильтрах и настройках,
+        где важно показать выбранное, невыбранное и недоступное состояние.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-cards">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Карточки</h2>
+    <p>
+      Карточки используются для группировки информации, навигации и представления
+      отдельных смысловых блоков внутри интерфейса.
+    </p>
+  </div>
+
+  <div class="uikit-photo-card">
+    <div class="uikit-photo-card-image">
+      <img src="assets/images/ui-cards.png" alt="Карточки UI Kit NUVIRA">
+    </div>
+
+    <div class="uikit-photo-card-text">
+      <p>
+        Карточки строятся на мягких скруглениях, спокойном фоне и понятной структуре.
+        Внутри карточки можно размещать заголовок, описание, изображение, кнопку
+        или короткий навигационный элемент. Важно сохранять достаточные отступы
+        и не перегружать карточку лишними деталями.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="screen uikit-section" id="ui-modals">
+  <div class="section-head">
+    <p class="eyebrow">02 Визуальная система. UI Kit</p>
+    <h2>Всплывающие окна</h2>
+    <p>
+      Всплывающие окна используются для важных сообщений, подтверждений
+      и дополнительной информации без перехода на другую страницу.
+    </p>
+  </div>
+
+  <div class="uikit-photo-card">
+    <div class="uikit-photo-card-image">
+      <img src="assets/images/ui-modals.png" alt="Всплывающие окна UI Kit NUVIRA">
+    </div>
+
+    <div class="uikit-photo-card-text">
+      <p>
+        Модальные окна размещаются поверх основного интерфейса и помогают сфокусировать
+        внимание пользователя на одном действии или сообщении. Фон затемняется,
+        а само окно сохраняет фирменные скругления, мягкую цветовую палитру
+        и спокойную структуру.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="uiKitDemoModal" hidden>
+  <div class="modal-card">
+    <button class="close" type="button">×</button>
+    <h2>Пример модального окна</h2>
+    <p>
+      Модальное окно используется для важных сообщений, подтверждений и дополнительной информации
+      внутри интерфейса NUVIRA.
+    </p>
+    <button class="button" type="button">Понятно</button>
+  </div>
+</div>
+
+ <section class="screen" id="carriers">
+  <div class="section-head">
+    <p class="eyebrow">03 Носители бренда</p>
+    <h2>Правила оформления носителей</h2>
+    <p>
+      Носители NUVIRA сохраняют единый образ бренда в digital-среде,
+      печати, мерче и партнёрских материалах.
+    </p>
+  </div>
+
+  <article class="carrier-rules-card">
+    <div class="carrier-rule-column">
+      <h3>Внешние носители</h3>
+
+      <p>
+        Внешние носители работают в публичной среде: печати, рекламе,
+        мерче и городских форматах. Они должны быть спокойными,
+        узнаваемыми и не перегруженными деталями.
+      </p>
+
+      <p>
+        В оформлении используются фирменные цвета, мягкие формы,
+        крупные отступы, читаемый логотип и короткие поддерживающие фразы.
+      </p>
+
+      <p class="carrier-examples">
+        Блокнот, стикеры, открытки, баннеры, мягкая игрушка,
+        шоппер, маска для сна, футболка, QR-постеры.
+      </p>
+    </div>
+
+    <div class="carrier-rule-column">
+      <h3>Внутренние носители</h3>
+
+      <p>
+        Внутренние носители используются в digital-коммуникации бренда
+        и материалах для психологов-партнёров.
+      </p>
+
+      <p>
+        Важно сохранять спокойный фон, понятную иерархию текста,
+        фирменные скругления, мягкие акценты и дружелюбный тон.
+      </p>
+
+      <p class="carrier-examples">
+        Шаблоны сторис, карточки App Store,
+        аватар, обложки, визитки, ручки и бейджи партнёров.
+      </p>
+    </div>
+  </article>
+</section>
 
     <section class="screen" id="gallery">
-      <div class="section-head">
-        <p class="eyebrow">Галерея</p>
-        <h2>Галерея макетов</h2>
-        <p>Носители бренда в разных форматах. Карточки можно открыть для просмотра описания.</p>
-      </div>
+  <div class="section-head">
+    <p class="eyebrow">03 Носители</p>
+    <h2>Галерея макетов</h2>
+    <p>
+      Галерея показывает фирменные носители NUVIRA в digital, печатных
+      и предметных форматах.
+    </p>
+  </div>
 
-      <div class="gallery-controls">
-        <button class="button secondary" id="carrierPrev" type="button">← Назад</button>
-        <button class="button secondary" id="carrierNext" type="button">Вперёд →</button>
-      </div>
+  <div class="gallery-top-row">
+    <p class="carrier-counter" id="carrierCounter">1–8 из 16</p>
 
-      <p class="carrier-counter" id="carrierCounter">1–8 из 20</p>
-      <div class="gallery" id="galleryGrid"></div>
-    </section>
+    <div class="gallery-controls">
+      <button class="gallery-arrow-button gallery-arrow-prev" id="carrierPrev" type="button" aria-label="Назад"></button>
+      <button class="gallery-arrow-button gallery-arrow-next" id="carrierNext" type="button" aria-label="Вперёд"></button>
+    </div>
+  </div>
+
+  <div class="gallery" id="galleryGrid"></div>
+</section>
 
 <section class="screen contacts" id="contacts">
   <img src="assets/images/cover-pattern.png" alt="" class="contacts-pattern">
@@ -939,19 +1757,29 @@
 
       <h2>Контактная информация</h2>
 
-      <p>
-        [ФИО студента] · [Направление] · 2026 ·
-        [Ссылка на GitHub Pages / Netlify / Vercel]
-      </p>
+<div class="contacts-info-text">
+  <p>
+    <strong>Работу выполнила:</strong> Лебедь Рената Рамисовна
+  </p>
+
+  <p>
+    <strong>Группа:</strong> 4-мд-15
+  </p>
+
+  <p>
+    <strong>Направление подготовки:</strong> Прикладная информатика в дизайне
+  </p>
+</div>
 
       <a class="button" href="#cover">Вернуться в начало</a>
     </div>
 
     <div class="contacts-mascot-wrap">
-    <img src="assets/images/contacts-mascot.png" alt="Маскот бренда NUVIRA" class="contacts-mascot">
+      <img src="assets/images/contacts-mascot.png" alt="Маскот бренда NUVIRA" class="contacts-mascot">
     </div>
   </div>
 </section>
+
   </main>
 
   <div class="modal" id="uiModal" hidden>
@@ -989,14 +1817,36 @@
     </div>
   </div>
 
-  <div class="modal" id="galleryModal" hidden>
-    <div class="modal-card gallery-modal-card">
-      <button class="close" type="button">×</button>
-      <p class="eyebrow" id="galleryModalType">Носитель</p>
-      <h2 id="galleryModalTitle">Носитель</h2>
-      <p id="galleryModalText">Описание носителя.</p>
+ <div class="modal" id="galleryModal" hidden>
+  <div class="modal-card gallery-modal-card">
+    <button class="close" type="button">×</button>
+
+    <div class="gallery-modal-content">
+      <div class="gallery-modal-text">
+        <p class="eyebrow" id="galleryModalType">Носитель</p>
+        <h2 id="galleryModalTitle">Носитель</h2>
+        <p id="galleryModalText">Описание носителя.</p>
+
+        <div class="gallery-variant-switcher" id="galleryVariantSwitcher" hidden></div>
+
+        <button class="button gallery-toggle-view" id="galleryToggleView" type="button">
+          Показать макет
+        </button>
+      </div>
+
+      <div class="gallery-modal-image">
+        <img id="galleryModalImage" src="" alt="">
+      </div>
     </div>
   </div>
+</div>
+
+  <div class="modal image-modal" id="imagePreviewModal" hidden>
+  <div class="image-modal-card">
+    <button class="close" type="button">×</button>
+    <img id="imagePreviewModalImg" src="" alt="">
+  </div>
+</div>
 
   <button class="scroll-top" id="scrollTopBtn" type="button" aria-label="Наверх">
     ↑
