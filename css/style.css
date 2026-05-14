@@ -6068,3 +6068,155 @@ section#colors .color-swatch-card .swatch-info em {
 [data-theme="dark"] .contacts-info-text strong {
   color: #F7F8FC !important;
 }
+
+/* СЕТКА — оставляем фиолетовую карточку, убираем белую подложку фото */
+
+#ui-grid .uikit-grid-image-card {
+  width: 100% !important;
+  padding: 24px !important;
+  border-radius: 32px !important;
+  background: #ECE8FF !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+#ui-grid .uikit-grid-image-card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  display: block !important;
+}
+
+[data-theme="dark"] #ui-grid .uikit-grid-image-card {
+  background: #7A8BD5 !important;
+}
+
+[data-theme="dark"] #ui-grid .uikit-grid-image-card img {
+  background: transparent !important;
+}
+
+/* UI KIT — типографика: одна карточка без внутренней подложки */
+
+#ui-typography .uikit-typography-image-card {
+  width: 100% !important;
+  padding: 24px !important;
+  border-radius: 32px !important;
+  background: #ECE8FF !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+#ui-typography .uikit-typography-images {
+  display: none !important;
+}
+
+#ui-typography .uikit-typography-main-image {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  display: block !important;
+}
+
+[data-theme="dark"] #ui-typography .uikit-typography-image-card {
+  background: #7A8BD5 !important;
+}
+
+[data-theme="dark"] #ui-typography .uikit-typography-main-image {
+  background: transparent !important;
+}
+
+/* ГАЛЕРЕЯ — 17-й носитель на всю сетку 4×2 */
+
+#gallery .gallery-card-full {
+  grid-column: 1 / -1 !important;
+  min-height: 700px !important;
+  height: 700px !important;
+  padding: 0 !important;
+  border-radius: 26px !important;
+  background: #ECE8FF !important;
+  cursor: default !important;
+  overflow: hidden !important;
+}
+
+#gallery .gallery-card-full:hover {
+  transform: none !important;
+}
+
+#gallery .gallery-card-full .gallery-card-image {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border-radius: 26px !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+#gallery .gallery-card-full .gallery-card-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 26px !important;
+  display: block !important;
+}
+
+#gallery .gallery-card-full h3 {
+  display: none !important;
+}
+
+[data-theme="dark"] #gallery .gallery-card-full {
+  background: #7A8BD5 !important;
+}
+
+@media (max-width: 1200px) {
+  #gallery .gallery-card-full {
+    height: 620px !important;
+    min-height: 620px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  #gallery .gallery-card-full {
+    height: 420px !important;
+    min-height: 420px !important;
+    border-radius: 22px !important;
+  }
+
+  #gallery .gallery-card-full .gallery-card-image,
+  #gallery .gallery-card-full .gallery-card-image img {
+    border-radius: 22px !important;
+  }
+}
+/* ГАЛЕРЕЯ — 17-й носитель без фиолетовой плашки */
+
+#gallery .gallery-card-full {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+#gallery .gallery-card-full .gallery-card-image {
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+#gallery .gallery-card-full .gallery-card-image img {
+  border-radius: 0 !important;
+  background: transparent !important;
+  object-fit: contain !important;
+}
+
+[data-theme="dark"] #gallery .gallery-card-full {
+  background: transparent !important;
+}
