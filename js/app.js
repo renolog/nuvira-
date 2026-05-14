@@ -578,6 +578,16 @@ const galleryItems = [
   image: 'assets/images/carrier-16.png',
   layoutImage: 'assets/images/carrier-16-layout.png'
 },
+
+{
+  title: 'Приложение NUVIRA',
+  type: 'Носитель бренда',
+  text: '',
+  image: 'assets/images/carrier-17.png',
+  layoutImage: '',
+  fullGrid: true,
+  noModal: true
+}
 ];
 
 const galleryGrid = $('#galleryGrid');
@@ -680,12 +690,15 @@ function renderGallery() {
 
   galleryGrid.innerHTML = visibleItems.map((item, index) => {
     const itemIndex = start + index;
+    const cardClass = item.fullGrid
+      ? 'gallery-card gallery-card-full'
+      : 'gallery-card';
 
     return `
-      <article class="gallery-card" data-gallery-index="${itemIndex}">
-      <div class="gallery-card-image">
-  <img src="${item.image}" alt="${item.title}">
-</div>
+      <article class="${cardClass}" data-gallery-index="${itemIndex}">
+        <div class="gallery-card-image">
+          <img src="${item.image}" alt="${item.title}">
+        </div>
 
         <h3>${item.title}</h3>
       </article>
@@ -698,7 +711,12 @@ function renderGallery() {
 
   $$('.gallery-card', galleryGrid).forEach((card) => {
     card.addEventListener('click', () => {
-      openGalleryItem(Number(card.dataset.galleryIndex));
+      const itemIndex = Number(card.dataset.galleryIndex);
+      const item = galleryItems[itemIndex];
+
+      if (item.noModal) return;
+
+      openGalleryItem(itemIndex);
     });
   });
 }
@@ -1287,8 +1305,8 @@ function renderGraphicsRunner() {
     Сдвиг только белого кружка в разделе "Маскот".
     Дорожка и кликабельные точки остаются как были.
   */
-const mascotThumbOffset = currentGraphicsMode === 'mascot' ? -7 : 0;
-const mascotThumbStep = 21.5;
+const mascotThumbOffset = currentGraphicsMode === 'mascot' ? 0 : 0;
+const mascotThumbStep = 24;
 
 const thumbLeft =
   runnerHeight / 2 +
